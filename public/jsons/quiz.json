@@ -1,0 +1,189 @@
+[
+    {
+        "quiz": "みんなで何かを決めるより、誰か一人が決めたほうが効率が良いと思う",
+        "imgsrc": "https://2.bp.blogspot.com/-AU0pMXy56IU/WCqr4v3VxSI/AAAAAAAA_xc/mIsWdlravpM6GDmE7nn7HcjcEAVIAyPFQCLcB/s800/business_oneman_keiei.png",
+        "choices": {
+            "one": {
+                "txt": "絶対そう",
+                "point": "100"
+            },
+            "two": {
+                "txt": "そうかもしれない",
+                "point": "10",
+                "adjust": "指導者はただ一人"
+            },
+            "three": {
+                "txt": "民主的にみんなで決めたい",
+                "point": "1",
+                "adjust": "権威主義こそ正義"
+            }
+        }
+    },
+    {
+        "quiz": "「同志」や「愛国」という言葉に親しみを覚える",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "法悦の感覚を覚える",
+                "point": "100"
+            },
+            "two": {
+                "txt": "覚えない",
+                "point": "1",
+                "adjust": "あなたは再教育候補-No.114514"
+            },
+            "three": {
+                "txt": "身体に染み付いている",
+                "point": "10"
+            }
+        }
+    },
+    {
+        "quiz": "最も信頼できるメディアは？",
+        "imgsrc": "https://4.bp.blogspot.com/-GQyJBS5SbrI/XG4GjNOYd_I/AAAAAAABRrs/9G9952kpEJQ2LwmHCxVA2DXg0Af7mRAhwCLcBGAs/s800/factcheck_woman.png",
+        "choices": {
+            "one": {
+                "txt": "タス通信",
+                "point": "100"
+            },
+            "two": {
+                "txt": "CNN",
+                "point": "1",
+                "adjust": "スプートニク"
+            },
+            "three": {
+                "txt": "新華社通信",
+                "point": "10"
+            }
+        }
+    },
+    {
+        "quiz": "人の命より国家のメンツが重要",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "七生報国は当然",
+                "point": "100"
+            },
+            "two": {
+                "txt": "やむを得ない",
+                "point": "10"
+            },
+            "three": {
+                "txt": "人命こそが第一義",
+                "point": "1",
+                "adjust": [
+                    "非国民は通報します",
+                    "平和ボケした考えだ"
+                ]
+            }
+        }
+    },
+    {
+        "quiz": "良心よりも恐怖心で行動する",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "はい、そうです",
+                "point": "100"
+            },
+            "two": {
+                "txt": "そうかもしれない",
+                "point": "10",
+                "adjust": "大事な人たちの顔を思い浮かべてください"
+            },
+            "three": {
+                "txt": "不正に立ち向かう",
+                "point": "-100",
+                "adjust": [
+                    "大事な人たちの顔を思い浮かべてください",
+                    "家族のことを考えた選択ですか？",
+                    "平穏と安寧がいかに尊いものか理解できませんか？"
+                ]
+            }
+        }
+    },
+    {
+        "quiz": "情報統制や監視社会は国民幸福度を向上させる",
+        "imgsrc": "https://1.bp.blogspot.com/-io1dMiIR2Ws/XdttgrPoBvI/AAAAAAABWI8/eLA6-8_0nAwMnH9aFJ261Sg_0-xHgPYVwCNcBGAsYHQ/s1600/kaisya_kanshi_kansa_man_shinken.png",
+        "choices": {
+            "one": {
+                "txt": "間違いない",
+                "point": "100"
+            },
+            "two": {
+                "txt": "それ以外の方法はない",
+                "point": "10"
+            },
+            "three": {
+                "txt": "民主的でなく間違っている",
+                "point": "1",
+                "adjust": "自由や平等、人権などは所詮夢物語だ"
+            }
+        }
+    },
+    {
+        "quiz": "大本営発表こそが唯一無二の信頼できる情報源である",
+        "imgsrc": "https://4.bp.blogspot.com/-VA_IOO7AQy4/VeJ-lBs7uwI/AAAAAAAAxH8/36QFYd58nRk/s800/money_yami_soshiki.png",
+        "choices": {
+            "one": {
+                "txt": "疑う余地がない",
+                "point": "100"
+            },
+            "two": {
+                "txt": "常識である",
+                "point": "10"
+            },
+            "three": {
+                "txt": "民衆を洗脳する情報操作は悪だ",
+                "point": "-300",
+                "adjust": "あなたの位置情報を当局に報告しました"
+            }
+        }
+    },
+    {
+        "quiz": "敵を内部崩壊させるための工作・諜報活動は励行するべき",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "陰謀論に近い考え方だ",
+                "point": "-100",
+                "adjust": [
+                    "思想強制が必要な者を我々は人と呼ばない",
+                    "愛国者への侮蔑は決して許されるものではない"
+                ]
+            },
+            "two": {
+                "txt": "愛国者のロールモデルである",
+                "point": "100"
+            },
+            "three": {
+                "txt": "良くない考えだと思う",
+                "point": "0",
+                "adjust": "言動は全て記録されている"
+            }
+        }
+    },
+    {
+        "quiz": "敬愛する指導者は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "毛沢東",
+                "point": "500"
+            },
+            "two": {
+                "txt": "リンカーン",
+                "point": "1",
+                "adjust": [
+                    "実在の人物を選んでください",
+                    "この回答は特定禁止条項に該当しています"
+                ]
+            },
+            "three": {
+                "txt": "スターリン",
+                "point": "1000"
+            }
+        }
+    }
+]
