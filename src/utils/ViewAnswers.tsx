@@ -4,9 +4,8 @@ import { answerResultType, quizType, yourAnsweredType } from "../ts/typeQuiz";
 import { useViewQuizAndAnswers } from "../hooks/answers/useViewQuizAndAnswers";
 import styled from "styled-components";
 
-const TheCommonContent = ({ answer, blackListChecker, isSingleComments }: {
+const TheCommonContent = ({ answer, isSingleComments }: {
     answer: answerResultType,
-    blackListChecker: boolean,
     isSingleComments: boolean
 }) => {
     return (
@@ -20,16 +19,7 @@ const TheCommonContent = ({ answer, blackListChecker, isSingleComments }: {
             <p>{answer.txt}</p>
             {/* コメント（所感）が複数ある場合 */}
             {isSingleComments ||
-                <>
-                    {answer.comment &&
-                        <>
-                            <p>{answer.comment}</p>
-                            {blackListChecker &&
-                                <p className="blackSignalAlert">{answer.blackSignalAlert}</p>
-                            }
-                        </>
-                    }
-                </>
+                <>{answer.comment && <p>{answer.comment}</p>}</>
             }
         </>
     );
@@ -64,14 +54,7 @@ export const ViewAnswers = memo(({ fetchdataPromise }: { fetchdataPromise: Promi
                     {/* コメント（所感）が一つだけの場合 */}
                     {isSingleComments &&
                         <div className="resultViewSentence">
-                            {fetchAnswersData[0].comment &&
-                                <>
-                                    <p>{fetchAnswersData[0].comment}</p>
-                                    {scoreChecker.blackListChecker &&
-                                        <p className="blackSignalAlert">{fetchAnswersData[0].blackSignalAlert}</p>
-                                    }
-                                </>
-                            }
+                            {fetchAnswersData[0].comment && <p>{fetchAnswersData[0].comment}</p>}
                         </div>
                     }
                     {typeof viewQuizAndAnswers !== 'undefined' && viewQuizAndAnswers.length > 0 &&
@@ -96,20 +79,17 @@ export const ViewAnswers = memo(({ fetchdataPromise }: { fetchdataPromise: Promi
                         </details>
                     }
                     <div id="resultChild" className="addFlex">
-                        <p id="wikiTxt">この記事の一部は、<a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">クリエイティブ・コモンズ・表示・継承ライセンス3.0</a>のもとで公表されたウィキペディアの項目<a href="http://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF%E6%A7%8B%E6%96%87%E5%A4%89%E6%95%B0" target="_blank">「メタ構文変数」</a>を素材として二次利用しています。</p>
                         {fetchAnswersData.map((answer, i) => (
                             <div className="resEls" key={i}>
                                 {answer.url ?
                                     <a href={answer.url} target="_blank">
                                         <TheCommonContent
                                             answer={answer}
-                                            blackListChecker={scoreChecker.blackListChecker}
                                             isSingleComments={isSingleComments}
                                         />
                                     </a> :
                                     <TheCommonContent
                                         answer={answer}
-                                        blackListChecker={scoreChecker.blackListChecker}
                                         isSingleComments={isSingleComments}
                                     />
                                 }
@@ -129,7 +109,7 @@ const ViewAnswersElm = styled.div`
         width: clamp(280px, 100%, 640px);
         margin: 0 auto;
         padding: 2.5em;
-        background-color: #ad3c3a;
+        background-color: #dadada;
         border-radius: 4px;
 
         & h2{
@@ -212,12 +192,10 @@ const ViewAnswersElm = styled.div`
                 border-left: 8px solid;
                 padding-left: .5em;
                 margin-bottom: 2em;
-                color: #fff;
                 line-height: 1.5;
             }
             
             & p{
-                color: #fff;
                 overflow-wrap: anywhere;
             }
 
@@ -226,7 +204,7 @@ const ViewAnswersElm = styled.div`
                 margin-bottom: 2em;
                 
                 & img{
-                    object-fit: cover;
+                    object-fit: contain;
                     width: 100%;
                     height: 100%;
                 }
@@ -241,12 +219,6 @@ const ViewAnswersElm = styled.div`
             &:not(.noImgAnker, .noAnker):hover {
                 transition: all .5s;
                 box-shadow: 0 0 16px rgba(0,0,0,.45);
-                
-                & h2,
-                & p{
-                    transition: color .5s;
-                    color: #fff;
-                }
             }
 
             &.noImgAnker,
@@ -284,10 +256,6 @@ const ViewAnswersElm = styled.div`
                 margin-bottom: 2em;
             }
         }
-
-        & .blackSignalAlert{
-            font-weight: bold;
-        }
     }
 
 @media screen and (min-width: 700px) {
@@ -297,13 +265,12 @@ const ViewAnswersElm = styled.div`
 
         &.addFlex{
             display: flex;
-            flex-flow: row wrap;
             justify-content: center;
             align-items: flex-start;
-            gap: 2%;
+            gap: 2em;
 
             & .resEls{
-                width: 48%;
+                width: 100%;
                 &:not(:last-of-type){
                     margin-bottom: 2%;
                 }
@@ -351,8 +318,6 @@ const ViewAnswersElm = styled.div`
             justify-content: flex-start;
 
             & .resEls{
-                width: 32%;
-
                 &:not(:last-of-type){
                     margin-bottom: 80px;
                 }

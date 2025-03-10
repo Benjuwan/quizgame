@@ -2,22 +2,27 @@ import { useContext } from "react";
 import { resultType } from "../../ts/typeQuiz";
 import { useCreateAnswersData } from "./useCreateAnswersData";
 import { FetchAnswersDataContext } from "../../providers/GetFetchAnswersDataContext";
+import { QuestionCounterContext } from "../../providers/QuestionCounterContext";
 
 export const useGetQuizResult = () => {
     const { setScoreChecker } = useContext(FetchAnswersDataContext);
+    const { questionCounter } = useContext(QuestionCounterContext);
     const { createAnswersData } = useCreateAnswersData();
 
     const getQuizResult: (score: number) => (() => void) | undefined = (score: number) => {
+        const highScorePoint: number = (questionCounter + 1) * 100;
+        const mediumScorePoint: number = (questionCounter + 1) * 10;
+
         /* 得点（score）別に回答データを描画 */
-        if (score >= 1000) {
+        if (score > mediumScorePoint && score <= highScorePoint) {
             createAnswersData('answer-high.json');
         }
 
-        else if ((score <= 999) && (score >= 540)) {
+        else if (score > 0 && score <= mediumScorePoint) {
             createAnswersData('answer-medium.json');
         }
 
-        else if ((score <= 539) && (score >= 1)) {
+        else if (score === 0) {
             createAnswersData('answer-low.json');
         }
 
@@ -30,12 +35,8 @@ export const useGetQuizResult = () => {
             }
         }
 
-        /* 得点の1桁台が【0】ではない者を選別。blackListChecker は 1桁台を取得した文字列 */
-        const blackListChecker: boolean = score.toString().split('').at(-1) !== '0';
-
         const result: resultType = {
-            score: score,
-            blackListChecker: blackListChecker
+            score: score
         }
 
         setScoreChecker(result);

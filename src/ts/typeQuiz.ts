@@ -33,12 +33,10 @@ export type answerResultType = {
     url?: string;
     img?: string;
     comment?: string;
-    blackSignalAlert?: string;
 };
 
 export type resultType = {
     score: number;
-    blackListChecker: boolean;
 };
 
 export type yourAnsweredType = {
