@@ -1,24 +1,23 @@
 import styled from "styled-components";
-import { memo, useState } from "react";
+import { memo, useContext } from "react";
+import { SelectQuizContext } from "./providers/SelectQuizContext";
 import { SelectQuiz } from "./SelectQuiz";
 import { FetchDataAndLoading } from "./FetchDataAndLoading";
 
 export const FirstViewer = memo(() => {
-    const [selectQuiz, setSelectQuiz] = useState<string>('');
+    const { selectQuiz } = useContext(SelectQuizContext);
 
     return (
         <FirstViewerElm>
             <div className="mainContainer">
                 {selectQuiz.length === 0 &&
-                    <>
-                        <div className="description">
-                            <h1>─ 俺TUEEE ─</h1>
-                            <p><span>誰でも満点（全問正解できる）</span>というコンセプトのクイズゲームです。<br />常に全問正答して<span>俺TUEEE（おれつえええ）という無双状態を体感</span>し、<br /><span>自己肯定感を好きなだけ爆上げ</span>してください。</p>
-                        </div>
-                        <SelectQuiz setSelectQuiz={setSelectQuiz} />
-                    </>
+                    <div className="description">
+                        <h1>─ 俺TUEEE ─</h1>
+                        <p><span>誰でも満点（全問正解できる）</span>というコンセプトのクイズゲームです。<br />常に全問正答して<span>俺TUEEE（おれつえええ）という無双状態を体感</span>し、<br /><span>自己肯定感を好きなだけ爆上げ</span>してください。</p>
+                        <SelectQuiz />
+                    </div>
                 }
-                <FetchDataAndLoading selectQuiz={selectQuiz} />
+                <FetchDataAndLoading />
             </div>
         </FirstViewerElm>
     );

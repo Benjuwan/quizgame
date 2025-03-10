@@ -46,7 +46,7 @@ export const QuizBtn = memo(({ fetchdataPromise }: { fetchdataPromise: Promise<q
                         <li>
                             <button id="nextBtn" type="button" onClick={increment} disabled={isBtnDisabled}>
                                 {questionCounter === getData.length - 1 ?
-                                    '検閲を行う' :
+                                    '結果発表！' :
                                     <>
                                         {questionCounter === getData.length - 2 ?
                                             '最終問題へ' : '次へ'
