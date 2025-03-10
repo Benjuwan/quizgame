@@ -119,6 +119,7 @@ const ContentView = styled.div`
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             place-items: center;
+            gap: 2em;
 
             & li{
                 margin-bottom: 0;
