@@ -13,7 +13,7 @@ export const FirstViewer = memo(() => {
                     <>
                         <div className="description">
                             <h1>─ 俺TUEEE ─</h1>
-                            <p><span>誰でも100点が取れる（全問正解できる）</span>というコンセプトのクイズゲームです。<br />常に全問正答して<span>俺TUEEE（おれつえええ）という無双状態を体感</span>し、<br /><span>自己肯定感を好きなだけ爆上げ</span>してください。</p>
+                            <p><span>誰でも満点（全問正解できる）</span>というコンセプトのクイズゲームです。<br />常に全問正答して<span>俺TUEEE（おれつえええ）という無双状態を体感</span>し、<br /><span>自己肯定感を好きなだけ爆上げ</span>してください。</p>
                         </div>
                         <SelectQuiz setSelectQuiz={setSelectQuiz} />
                     </>

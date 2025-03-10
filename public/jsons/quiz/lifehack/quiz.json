@@ -1,0 +1,202 @@
+[
+    {
+        "quiz": "野菜を長持ちさせるために冷蔵庫に入れる際に使うと良いものは？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "アルミホイル",
+                "point": "10",
+                "adjust": "アルミホイルは冷凍保存には便利だけど、生野菜には適さないよ。"
+            },
+            "two": {
+                "txt": "キッチンペーパー",
+                "point": "100"
+            },
+            "three": {
+                "txt": "ビニール袋だけ",
+                "point": "0",
+                "adjust": "ビニール袋だけだと湿気がこもって傷みやすいね。"
+            }
+        }
+    },
+    {
+        "quiz": "靴の臭いを防ぐために靴の中に入れると良いものは？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "水",
+                "point": "0",
+                "adjust": "水はかえって臭いの原因になってしまうよ！"
+            },
+            "two": {
+                "txt": "重曹",
+                "point": "100"
+            },
+            "three": {
+                "txt": "柔軟剤シート",
+                "point": "10",
+                "adjust": "柔軟剤シートでも多少効果はあるけど、臭いを吸収するには重曹がベストだよ。"
+            }
+        }
+    },
+    {
+        "quiz": "服のシワを取るために使うと効果的なものは？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "霧吹き",
+                "point": "100"
+            },
+            "two": {
+                "txt": "ドライヤー",
+                "point": "10",
+                "adjust": "ドライヤーでも取れる場合があるけど、霧吹きで湿らせるとより効果的だよ。"
+            },
+            "three": {
+                "txt": "掃除機",
+                "point": "0",
+                "adjust": "掃除機ではシワは取れないね。"
+            }
+        }
+    },
+    {
+        "quiz": "スマホ画面をきれいにするのに適した布は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "タオル",
+                "point": "10",
+                "adjust": "タオルだと繊維が残ってしまうことがあるよ。"
+            },
+            "two": {
+                "txt": "マイクロファイバークロス",
+                "point": "100"
+            },
+            "three": {
+                "txt": "キッチンペーパー",
+                "point": "0",
+                "adjust": "キッチンペーパーは細かい傷がつきやすいので避けよう。"
+            }
+        }
+    },
+    {
+        "quiz": "食器の油汚れを簡単に落とすために使うと良いものは？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "お酢",
+                "point": "0",
+                "adjust": "お酢は油にはあまり効果がないね。"
+            },
+            "two": {
+                "txt": "重曹",
+                "point": "100"
+            },
+            "three": {
+                "txt": "砂糖",
+                "point": "10",
+                "adjust": "砂糖では油汚れは取れないね。"
+            }
+        }
+    },
+    {
+        "quiz": "コーヒーの香りを長持ちさせるための保存方法は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhSz-bZVeah5lHgzSG8R1u1uINbh5La2EyzYdhamHx1y5Iaat59EAc-gNUURlpxZCemB8XIyP2LyrQB8E2LP_ucdIjhhuhRPo3ORONZfNZR6Mbb2DTz2eTIMvAujYQsoESad23zaJb85CN-/s800/drink_coffee.png",
+        "choices": {
+            "one": {
+                "txt": "冷蔵庫にそのまま入れる",
+                "point": "10",
+                "adjust": "冷蔵庫では湿気を吸って劣化しやすいよ。"
+            },
+            "two": {
+                "txt": "密閉容器に入れ冷暗所に保管",
+                "point": "100"
+            },
+            "three": {
+                "txt": "常温で袋のまま放置",
+                "point": "0",
+                "adjust": "袋のままだと酸化が進んでしまうよ。"
+            }
+        }
+    },
+    {
+        "quiz": "ホコリが舞わないように掃除をするには？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "濡れ雑巾で拭き掃除する",
+                "point": "100"
+            },
+            "two": {
+                "txt": "ドライモップでサッと払う",
+                "point": "10",
+                "adjust": "ドライモップだと舞いやすいので注意！"
+            },
+            "three": {
+                "txt": "掃除機だけ使う",
+                "point": "0",
+                "adjust": "掃除機だけだと舞い上がってしまうことが多いよ。"
+            }
+        }
+    },
+    {
+        "quiz": "ジャケットを型崩れさせずに収納する方法は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "細いワイヤーハンガーを使う",
+                "point": "10",
+                "adjust": "細いハンガーだと肩が型崩れしやすいよ。"
+            },
+            "two": {
+                "txt": "畳んで収納する",
+                "point": "0",
+                "adjust": "ジャケットは吊るして保管が基本だね。"
+            },
+            "three": {
+                "txt": "厚めのハンガーを使う",
+                "point": "100"
+            }
+        }
+    },
+    {
+        "quiz": "卵を長持ちさせるために冷蔵庫に入れる向きは？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi35mKKNNLDfWd81HWiaJXkVRoIBSQct7b8wsjhFPFOdYQvx4fnoUxppzdOMTU_J7aatl089X1fQa-YFqQAYuAcK3ECdQNZwBibg0IT848CUPMVn7iC3865uKHa-fqSIguAb9ZHi8Whzh0/s800/tamago_pack.png",
+        "choices": {
+            "one": {
+                "txt": "とがった方を下にする",
+                "point": "100"
+            },
+            "two": {
+                "txt": "丸い方を下にする",
+                "point": "10",
+                "adjust": "丸い方を下にすると空気がたまりやすいよ。"
+            },
+            "three": {
+                "txt": "どちらでもよい",
+                "point": "0",
+                "adjust": "保存には向きが大事だよ！"
+            }
+        }
+    },
+    {
+        "quiz": "レンジで加熱するときに吹きこぼれを防ぐ方法は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "しっかり密閉する",
+                "point": "10",
+                "adjust": "密閉すると逆に吹きこぼれやすいよ。"
+            },
+            "two": {
+                "txt": "ラップをゆるめにかける",
+                "point": "100"
+            },
+            "three": {
+                "txt": "ラップをかけない",
+                "point": "0",
+                "adjust": "かけないと乾燥や飛び散りが発生するよ。"
+            }
+        }
+    }
+]

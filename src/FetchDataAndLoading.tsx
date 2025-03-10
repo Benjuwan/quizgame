@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { memo, Suspense } from "react";
-import { fetchUrlPath_forDeploy, isDeploy } from "./common/isDeploy";
+import { fetchUrlPath_forDeploy, isDeploy, selectQuizDefaultValue } from "./common/isDeploy";
 import { quizType } from "./ts/typeQuiz";
 import { Loading } from "./common/loading";
 import { QuizProgressBar } from "./utils/QuizProgressBar";
@@ -10,9 +10,9 @@ import { ViewAnswers } from "./utils/ViewAnswers";
 
 // questionCounter（ContextAPI：グローバルステート）更新に伴う再レンダリング防止措置で memo 化処理
 export const FetchDataAndLoading = memo(({ selectQuiz }: { selectQuiz: string }) => {
-    console.log(selectQuiz);
+    const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : selectQuizDefaultValue}/quiz.json`;
 
-    const fetchPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/quiz.json` : `${location.origin}/public/jsons/quiz.json`;
+    const fetchPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/${dynamicFetchPathUrl}` : `${location.origin}/public/jsons/quiz/${dynamicFetchPathUrl}`;
 
     // ※ await はしない。Promise を返す記述にする。Promise が未完了ならサスペンド状態となる（Suspense の fallback が返る） 
     const fetchdataPromise: Promise<quizType[]> = fetch(fetchPathUrl).then(res => res.json());

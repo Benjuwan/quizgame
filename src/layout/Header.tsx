@@ -4,7 +4,7 @@ import { memo } from "react";
 export const Header = memo(() => {
     return (
         <HeaderElm>
-            <h1>誰でも100点！？ 俺TUEEE</h1>
+            <h1>誰でも満点！？ 俺TUEEE</h1>
         </HeaderElm>
     );
 });

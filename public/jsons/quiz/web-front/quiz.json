@@ -1,0 +1,202 @@
+[
+    {
+        "quiz": "Webページを作成するためのマークアップ言語は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "JavaScript",
+                "point": "0",
+                "adjust": "JavaScriptは動きを付けるための言語だよ。"
+            },
+            "two": {
+                "txt": "HTML",
+                "point": "100"
+            },
+            "three": {
+                "txt": "CSS",
+                "point": "10",
+                "adjust": "CSSはデザインを整えるための言語だね。"
+            }
+        }
+    },
+    {
+        "quiz": "HTMLで画像が表示されない場合に表示する代替テキストを指定する属性は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "placeholder",
+                "point": "0",
+                "adjust": "placeholderは入力フィールドで使われる属性です。"
+            },
+            "two": {
+                "txt": "title",
+                "point": "10",
+                "adjust": "title属性はツールチップとして表示されるものです。"
+            },
+            "three": {
+                "txt": "alt",
+                "point": "100"
+            }
+        }
+    },
+    {
+        "quiz": "Webサイトのパフォーマンスを改善するために最も効果的な画像形式は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "WebP",
+                "point": "100"
+            },
+            "two": {
+                "txt": "JPEG",
+                "point": "10",
+                "adjust": "JPEGも圧縮率が高いですが、WebPはさらに高圧縮で高品質です。"
+            },
+            "three": {
+                "txt": "BMP",
+                "point": "0",
+                "adjust": "BMP形式はファイルサイズが非常に大きく、パフォーマンス改善には不向きです。"
+            }
+        }
+    },
+    {
+        "quiz": "JavaScriptで非同期処理を扱うための構文で、Promiseをより直感的に使えるものは？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "setTimeout",
+                "point": "0",
+                "adjust": "setTimeoutは遅延実行を行いますが、非同期処理全般に適しているわけではありません。"
+            },
+            "two": {
+                "txt": "async/await",
+                "point": "100"
+            },
+            "three": {
+                "txt": "callback",
+                "point": "10",
+                "adjust": "callbackでも非同期処理はできますが、ネストが深くなると可読性が低下します。"
+            }
+        }
+    },
+    {
+        "quiz": "Webサイトが暗号化されているか確認するには？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "ページが動的に動いているか確認する",
+                "point": "10",
+                "adjust": "動的ページでも暗号化されていないことがあるよ。"
+            },
+            "two": {
+                "txt": "URLが「https://」で始まっているか確認する",
+                "point": "100"
+            },
+            "three": {
+                "txt": "ブラウザのタブにアイコンが表示されているか確認する",
+                "point": "0",
+                "adjust": "アイコン（ファビコン）はセキュリティとは関係ないね。"
+            }
+        }
+    },
+    {
+        "quiz": "画面遷移のないシングルページアプリケーション（SPA）を実現するためのフレームワークとして一般的なのは？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "React",
+                "point": "100"
+            },
+            "two": {
+                "txt": "Bootstrap",
+                "point": "10",
+                "adjust": "BootstrapはCSSフレームワークで、SPAのための機能はありません。"
+            },
+            "three": {
+                "txt": "jQuery",
+                "point": "0",
+                "adjust": "jQueryはDOM操作を簡単にするライブラリで、SPAを直接サポートしているわけではありません。"
+            }
+        }
+    },
+    {
+        "quiz": "Webページをスタイリングするための言語は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "PHP",
+                "point": "0",
+                "adjust": "PHPはサーバーサイドスクリプトだね。"
+            },
+            "two": {
+                "txt": "HTML",
+                "point": "10",
+                "adjust": "HTMLは構造を定義するための言語だよ。"
+            },
+            "three": {
+                "txt": "CSS",
+                "point": "100"
+            }
+        }
+    },
+    {
+        "quiz": "フォームに入力された内容をサーバーへ安全に送信するために避けるべき脆弱性は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "SEO",
+                "point": "10",
+                "adjust": "SEOは検索エンジン最適化であり、セキュリティとは関係ありません。"
+            },
+            "two": {
+                "txt": "XSS",
+                "point": "100"
+            },
+            "three": {
+                "txt": "レスポンシブ",
+                "point": "0",
+                "adjust": "レスポンシブはデザインの話で、セキュリティ脆弱性とは異なります。"
+            }
+        }
+    },
+    {
+        "quiz": "WebブラウザでCookieを削除する目的として正しいものは？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "Webサイトの表示速度を上げるため",
+                "point": "10",
+                "adjust": "Cookieのサイズが大きすぎると速度に影響することがありますが、主な目的ではありません。"
+            },
+            "two": {
+                "txt": "プライバシー保護のため",
+                "point": "100"
+            },
+            "three": {
+                "txt": "Webサイトのデザインをカスタマイズするため",
+                "point": "0",
+                "adjust": "Cookieでデザインを直接変更することは一般的ではありません。"
+            }
+        }
+    },
+    {
+        "quiz": "レスポンシブデザインを実現するために使用するCSSの機能は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "CSSアニメーション",
+                "point": "0",
+                "adjust": "アニメーションは動きを付けるためのもので、レスポンシブデザインの直接的な機能ではありません。"
+            },
+            "two": {
+                "txt": "メディアクエリ",
+                "point": "100"
+            },
+            "three": {
+                "txt": "CSSセレクタ",
+                "point": "10",
+                "adjust": "セレクタは要素を選択するものですが、画面サイズに応じた切り替えにはメディアクエリが必要です。"
+            }
+        }
+    }
+]

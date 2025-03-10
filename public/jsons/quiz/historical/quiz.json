@@ -1,0 +1,162 @@
+[
+    {
+        "quiz": "幕末の志士であり、日本の近代化に尽力した人物は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsYonxr321FMa4c_j17lDWbOgstUSckmgtJET2FfDIMsiGeV5TcrNYTq8ORIaolk5hf_Rbkgo5rZr5_MXw-WxXMFdgTMororolp3qijpPdXzCSIiGo2K080KA4CV0eS6KFQuAA5dKkJ6Xu/s800/nigaoe_sakamoto_ryouma.png",
+        "choices": {
+            "one": {
+                "txt": "徳川家康",
+                "point": "10",
+                "adjust": "家康は江戸幕府を開いた将軍だね。"
+            },
+            "two": {
+                "txt": "足利義満",
+                "point": "0",
+                "adjust": "義満は室町幕府の将軍だね。"
+            },
+            "three": {
+                "txt": "坂本龍馬",
+                "point": "100"
+            }
+        }
+    },
+    {
+        "quiz": "世界史における産業革命が最初に起こった国は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "イギリス",
+                "point": "100"
+            },
+            "two": {
+                "txt": "フランス",
+                "point": "10",
+                "adjust": "フランスではなく、産業革命の発祥はイギリスだよ。"
+            },
+            "three": {
+                "txt": "アメリカ",
+                "point": "0",
+                "adjust": "アメリカではなく、産業革命の発祥はイギリスだね。"
+            }
+        }
+    },
+    {
+        "quiz": "第二次世界大戦後に発足し、現在の平和と安全を維持するために活動する国際組織は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "国際オリンピック委員会",
+                "point": "10",
+                "adjust": "オリンピックを運営する組織だね。"
+            },
+            "two": {
+                "txt": "国際連合",
+                "point": "100"
+            },
+            "three": {
+                "txt": "国際赤十字",
+                "point": "0",
+                "adjust": "医療支援を行う団体だよね。"
+            }
+        }
+    },
+    {
+        "quiz": "古代エジプトのピラミッドを建設した王として有名な人物は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhv4zjoN9Hum0JKn2uSFFxCDG0O_QkJ9OZSJYHcpWqufTjr_uAo2-26KF1wvP8KbRoxnghpxh5Y27TWtbnuyx7HLvTk6T2JsGs4z76DQwTDSp2gYcg0EB_Cgv2NwuT9UKd-gaUA20gSLR3e/s800/world_giza_pyramid.png",
+        "choices": {
+            "one": {
+                "txt": "ラムセス2世",
+                "point": "0",
+                "adjust": "ラムセス2世は建築王と呼ばれたが、ピラミッドの時代より後だね。"
+            },
+            "two": {
+                "txt": "クフ王",
+                "point": "100"
+            },
+            "three": {
+                "txt": "ツタンカーメン",
+                "point": "10",
+                "adjust": "ツタンカーメンは黄金のマスクで有名だね。"
+            }
+        }
+    },
+    {
+        "quiz": "戦国時代に「天下布武」を掲げた武将は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhROzp9LWz_dfEfkdXVZSb6Qk7FfxmabvnRfYPV3LMW10L4OsGcM2L5JnLJjZKoFlcFVw8VIDK8Q1bznEy5vYw-gFiKIdBjcdirWkh-oIZHltUuDn1WGWyE3zxR5lJ-x51qdplQ-FyeYPYK/s800/nigaoe_oda_nobunaga.png",
+        "choices": {
+            "one": {
+                "txt": "豊臣秀吉",
+                "point": "10",
+                "adjust": "秀吉は信長の家臣から天下人になった人物だね。"
+            },
+            "two": {
+                "txt": "織田信長",
+                "point": "100"
+            },
+            "three": {
+                "txt": "徳川家康",
+                "point": "0",
+                "adjust": "家康は江戸幕府を開いた人物だね。"
+            }
+        }
+    },
+    {
+        "quiz": "第一次世界大戦が勃発した年は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "1939年",
+                "point": "10",
+                "adjust": "1939年は第二次世界大戦の開始年だね。"
+            },
+            "two": {
+                "txt": "1905年",
+                "point": "0",
+                "adjust": "日露戦争があった年だね。"
+            },
+            "three": {
+                "txt": "1914年",
+                "point": "100"
+            }
+        }
+    },
+    {
+        "quiz": "中世ヨーロッパで領主が農奴に土地を貸し与え、代わりに働かせた制度は？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "封建制度",
+                "point": "100"
+            },
+            "two": {
+                "txt": "共和制",
+                "point": "10",
+                "adjust": "共和制は民衆が統治に関わる体制だね。"
+            },
+            "three": {
+                "txt": "帝政",
+                "point": "0",
+                "adjust": "帝政は皇帝が統治する政治体制だね。"
+            }
+        }
+    },
+    {
+        "quiz": "日本で最初に憲法が制定されたのは何年？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "1947年",
+                "point": "10",
+                "adjust": "1947年は日本国憲法の施行年だね。"
+            },
+            "two": {
+                "txt": "1889年",
+                "point": "100"
+            },
+            "three": {
+                "txt": "1868年",
+                "point": "0",
+                "adjust": "明治維新の年だね。"
+            }
+        }
+    }
+]

@@ -1,0 +1,217 @@
+[
+    {
+        "quiz": "砂漠に住んでいて、コブが特徴的な動物は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinfJ5fgf9kZai-csal_mVnQt72i2Si9Cx0o89oKM3kIETYBHkP133Oet35BsASHUaFHl5ZZPUu2XXhlw-Kzqo30C5l2K2CfRrAFIy9Y6-y9x6jFnrQVix27jd0dgsYXZQqpHCJ6s-eXZFc/s697/animal_rakuda_kobu_tareru.png",
+        "choices": {
+            "one": {
+                "txt": "カバ",
+                "point": "0",
+                "adjust": [
+                    "カバは水辺が好きだよね。",
+                    "コブはないし、砂漠には住まないよ。"
+                ]
+            },
+            "two": {
+                "txt": "ラクダ",
+                "point": "100"
+            },
+            "three": {
+                "txt": "ゾウ",
+                "point": "10",
+                "adjust": "ゾウも大きいけど、コブはないよね。"
+            }
+        }
+    },
+    {
+        "quiz": "木の上でゆっくり動き、ほとんど一日中寝ている動物は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj5V-FVXpkYxeL1r9oNJVr5YNvrwZYRWuwZG9ScvVAglvfNtk6jtTm44zQY4qbQ7R_aApwOlY9hpOFbDOmzfbg4NUBqupuBgPOXWPZ6H68M7ldupzRmk5msL8OZJZJFCuPDITx7u-9iOsvl/s800/animal_namakemono.png",
+        "choices": {
+            "one": {
+                "txt": "ワニ",
+                "point": "0",
+                "adjust": "ワニは水辺で日光浴するイメージだね。"
+            },
+            "two": {
+                "txt": "サル",
+                "point": "10",
+                "adjust": "サルも木の上が好きだけど、もっと活発に動くよ。"
+            },
+            "three": {
+                "txt": "ナマケモノ",
+                "point": "100"
+            }
+        }
+    },
+    {
+        "quiz": "夜行性で、大きな目と耳を持つ砂漠の小動物は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhk3pnQTArLjtSx0IaESU1pHelW_H23ScsSn3zuSda1ATHOzULDL9BKu9iqh8M0orhwQPMqzZ8CZYi75xgSpxgU9jue7_L2HVuLH4AXmdYB9sC9oS-19L7vr0dA6XM6ww1SHLq2ndO5RYQ/s800/animal_fennec.png",
+        "choices": {
+            "one": {
+                "txt": "コウモリ",
+                "point": "10",
+                "adjust": "コウモリも夜行性だけど、砂漠にはあまりいないね。"
+            },
+            "two": {
+                "txt": "パンダ",
+                "point": "0",
+                "adjust": [
+                    "パンダは砂漠には住まないよね。",
+                    "竹が大好きな動物だよ。"
+                ]
+            },
+            "three": {
+                "txt": "フェネック",
+                "point": "100"
+            }
+        }
+    },
+    {
+        "quiz": "鼻が長く、群れで生活する大型草食動物は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQEskUGA_iL90LUOOTMMQW5MXtbbW0U8zS5nHevSjdEKGsy0I9fB3bcnYiG2r1F-T5SH8GI3vaxgH8HAPDFzVzTWH_22yw4jqScbF9tmkPRrnSvGele5QTukIHx5r0-Y99cHnHUZOXHw4b/s800/animal_zou.png",
+        "choices": {
+            "one": {
+                "txt": "ライオン",
+                "point": "0",
+                "adjust": [
+                    "ライオンは肉食動物だよ。",
+                    "鼻が長いわけではないね。"
+                ]
+            },
+            "two": {
+                "txt": "ゾウ",
+                "point": "100"
+            },
+            "three": {
+                "txt": "キリン",
+                "point": "10",
+                "adjust": "キリンは首が長いけど、鼻は長くないね。"
+            }
+        }
+    },
+    {
+        "quiz": "赤い毛並みとふさふさの尻尾を持つ、森に住む小型哺乳類は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhY5zBzXu2Jz_BZ98I7kF4SZsMH9srfenKO5d9EncMXTYHbBs_iWzE7N3uYoi4HM2gDxlLw3YAnKno252vO_-p9-vVw78n5F7WpZ8jJ_Ff_RkgS1poOBuMKQaseuu5Y2NpqxpIXcNSoGa0/s800/animal_nihon_risu.png",
+        "choices": {
+            "one": {
+                "txt": "オオカミ",
+                "point": "10",
+                "adjust": "オオカミも森に住むけど、小型じゃないよね。"
+            },
+            "two": {
+                "txt": "リス",
+                "point": "100"
+            },
+            "three": {
+                "txt": "カエル",
+                "point": "0",
+                "adjust": "カエルには毛並みも尻尾もないよね。"
+            }
+        }
+    },
+    {
+        "quiz": "氷の上で生活し、白い毛が特徴の肉食動物は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTGY17oPE5SwN0xtn7RT_yzbJk6ZWeIkiIb5SjgazvBasNtRL5SloIuwcszj6dZfgjITFMoLU9qPVi61rwrDkONmiB5uO2BkeEDr95peRGatncDwgdSFiYEE8UtAFLXEsOivlMBDN3Z8Q8/s800/animal_bear_hokkyoku.png",
+        "choices": {
+            "one": {
+                "txt": "アザラシ",
+                "point": "10",
+                "adjust": "アザラシも氷上で見かけるけど、白い毛はないね。"
+            },
+            "two": {
+                "txt": "ペンギン",
+                "point": "0",
+                "adjust": [
+                    "ペンギンは鳥類だよね。",
+                    "白と黒の体色が特徴だね。"
+                ]
+            },
+            "three": {
+                "txt": "ホッキョクグマ",
+                "point": "100"
+            }
+        }
+    },
+    {
+        "quiz": "水中で長い体をくねらせて泳ぐ、ヌルヌルした魚は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjuMbqN1UR3o6spva3RE_sJc9cetH9KE2L2T64Iuao5nJDeraxfCraGDvogiqUdCa9ZBMn8trz4XgHg0VDJb6ifolUErAv7XFg3xKIzcW4lNDRy_YlI7iegBA8GDl2zT4rQ9aScyyvJY23y/s800/fish_unagi2.png",
+        "choices": {
+            "one": {
+                "txt": "イルカ",
+                "point": "10",
+                "adjust": "イルカは哺乳類だよね。"
+            },
+            "two": {
+                "txt": "ウナギ",
+                "point": "100"
+            },
+            "three": {
+                "txt": "タコ",
+                "point": "0",
+                "adjust": "タコは魚じゃなくて軟体動物だね。"
+            }
+        }
+    },
+    {
+        "quiz": "竹を主食とし、白と黒の特徴的な模様がある動物は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDXJPa2p0GbV8DsTPtRhCNrJgxcsqd8TSVnffC_OrUdC-MNLtXdVoK8JpehYcktMKuug6q_p1ZrLkMJITK0UMt68JHxlZ39Sk-RBo47VIDhxMu_0aG12PVeWFIP3JgM05oL0OG62yxXvjs/s800/animal_bear_panda.png",
+        "choices": {
+            "one": {
+                "txt": "トラ",
+                "point": "10",
+                "adjust": "トラも縞模様が特徴だけど、白と黒じゃないね。"
+            },
+            "two": {
+                "txt": "パンダ",
+                "point": "100"
+            },
+            "three": {
+                "txt": "アルパカ",
+                "point": "0",
+                "adjust": "アルパカは草を食べるけど、竹は食べないよ。"
+            }
+        }
+    },
+    {
+        "quiz": "川や湖に生息し、大きな口とずんぐりした体が特徴の動物は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiw1W0bLkr0W0ncNQl3kNM9bVtJy8Ae_JbFNzhArMZIiSSdnqdVUgA_WKvqsp4xl6W3yW7YBxuv_coo_dOcVqPBEtbGjEIBeBWCqsNgLQELhbk_IX-aF3ZbKmIYwPSgklfNue3ZmSJVn_Yu/s800/animal_kaba.png",
+        "choices": {
+            "one": {
+                "txt": "ワニ",
+                "point": "10",
+                "adjust": "ワニも水辺にいるけど、体が細長いよね。"
+            },
+            "two": {
+                "txt": "ビーバー",
+                "point": "0",
+                "adjust": "ビーバーはダムを作るけど、大きな口ではないね。"
+            },
+            "three": {
+                "txt": "カバ",
+                "point": "100"
+            }
+        }
+    },
+    {
+        "quiz": "オレンジ色と黒の縞模様を持ち、肉食性の大型ネコ科動物は？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj92pMMHVB_LGWIcnJIuycUhXDR3kPX-JHrvmoz9HS73sw9yxT07gMsHVxMD7obAbZNQCBRt13l7dig0KRS7eoy7lx_wXJ-WsZpEJdFsv32yGFKFFV36pwvgI8EA48IESYMNm_SmW9OZ60/s800/animal_tora.png",
+        "choices": {
+            "one": {
+                "txt": "チーター",
+                "point": "10",
+                "adjust": "チーターは斑点模様が特徴だね。"
+            },
+            "two": {
+                "txt": "ライオン",
+                "point": "0",
+                "adjust": [
+                    "ライオンは縞模様じゃなくてたてがみが特徴だよ。",
+                    "オレンジ色と黒の縞模様ではないね。"
+                ]
+            },
+            "three": {
+                "txt": "トラ",
+                "point": "100"
+            }
+        }
+    }
+]
