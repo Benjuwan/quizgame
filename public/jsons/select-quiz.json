@@ -1,0 +1,22 @@
+[
+    {
+        "value": "animal",
+        "plainTxt": "色々な動物たち"
+    },
+    {
+        "value": "geo",
+        "plainTxt": "地理・自然"
+    },
+    {
+        "value": "historical",
+        "plainTxt": "歴史（世界史・日本史）"
+    },
+    {
+        "value": "web-front",
+        "plainTxt": "webサイト制作関連"
+    },
+    {
+        "value": "lifehack",
+        "plainTxt": "ライフハック"
+    }
+]

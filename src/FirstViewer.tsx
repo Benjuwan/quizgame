@@ -1,20 +1,32 @@
 import styled from "styled-components";
-import { memo, useContext } from "react";
+import { memo, Suspense, useContext } from "react";
 import { SelectQuizContext } from "./providers/SelectQuizContext";
-import { SelectQuiz } from "./SelectQuiz";
+import { selectQuizType } from "./ts/typeQuiz";
+import { isDeploy, fetchUrlPath_forDeploy } from "./common/isDeploy";
+import { SelectQuiz } from "./utils/SelectQuiz";
 import { FetchDataAndLoading } from "./FetchDataAndLoading";
 
 export const FirstViewer = memo(() => {
     const { selectQuiz } = useContext(SelectQuizContext);
+
+    // クイズゲームの選択肢シートのフェッチ処理
+    const fetchSelectQuizPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/select-quiz.json` : `${location.origin}/public/jsons/select-quiz.json`;
+
+    // ※ await はしない。Promise を返す記述にする。Promise が未完了ならサスペンド状態となる（Suspense の fallback が返る） 
+    const fetchSelectQuizDataPromise: Promise<selectQuizType[]> = fetch(fetchSelectQuizPathUrl).then(res => res.json());
 
     return (
         <FirstViewerElm>
             <div className="mainContainer">
                 {selectQuiz.length === 0 &&
                     <div className="description">
-                        <h1>─ 俺TUEEE ─</h1>
-                        <p><span>誰でも満点（全問正解できる）</span>というコンセプトのクイズゲームです。<br />常に全問正答して<span>俺TUEEE（おれつえええ）という無双状態を体感</span>し、<br /><span>自己肯定感を好きなだけ爆上げ</span>してください。</p>
-                        <SelectQuiz />
+                        <h1>─ 誰でも100点!? 俺TUEEE ─</h1>
+                        <div className="descriptionDetails">
+                            <p><span>誰でも100点が取れる（全問正解できる）</span>というコンセプトのクイズゲームです。<br />常に全問正答して<span>俺TUEEE（おれつえええ）という無双状態を体感</span>し、<br /><span>自己肯定感を好きなだけ爆上げ</span>してください。</p>
+                            <Suspense fallback={<p id="fetchSelectQuiz">選択肢取得中</p>}>
+                                <SelectQuiz fetchSelectQuizDataPromise={fetchSelectQuizDataPromise} />
+                            </Suspense>
+                        </div>
                     </div>
                 }
                 <FetchDataAndLoading />
@@ -42,14 +54,22 @@ margin: 2.5em auto calc(100vw/4);
                 color: #fff;
                 border-radius: 4px 4px 0 0;
             }
-            
-            & p{
+
+            & .descriptionDetails{
                 border-radius: 0 0 4px 4px;
                 background-color: #dadada;
                 padding: 1em;
-
+            }
+            
+            & p{
                 & span{
                     background: linear-gradient(to bottom, rgba(255,225,225,0) 70%, gold 30%);
+                }
+
+                &#fetchSelectQuiz{
+                    text-align: center;
+                    letter-spacing: 0.25em;
+                    line-height: 7; // レイアウトシフト対策
                 }
             }
         }

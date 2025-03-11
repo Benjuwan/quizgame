@@ -1,3 +1,8 @@
+export type selectQuizType = {
+    value: string;
+    plainTxt: string;
+};
+
 type quizChoiceContentType = {
     txt: string;
     point: string;

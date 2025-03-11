@@ -24,6 +24,7 @@ export const FetchDataAndLoading = memo(() => {
         <>
             {selectQuiz.length > 0 &&
                 <QuizComponent>
+                    {/* Suspense 必須 */}
                     <Suspense fallback={<Loading />}>
                         <QuizProgressBar fetchdataPromise={fetchdataPromise} />
                         <QuizContents fetchdataPromise={fetchdataPromise} />
