@@ -9,12 +9,31 @@ export const useCreateAnswersData = () => {
     const { selectQuiz } = useContext(SelectQuizContext);
 
     const createAnswersData: (urlPathPart: string) => void = async (urlPathPart: string) => {
-        const fetchUrlPath: string = isDeploy ? `${fetchUrlPath_forDeploy}/answers/${selectQuiz}/${urlPathPart}` : `${location.origin}/public/jsons/answers/${selectQuiz}/${urlPathPart}`;
+        try {
+            const fetchUrlPath: string = isDeploy ? `${fetchUrlPath_forDeploy}/answers/${selectQuiz}/${urlPathPart}` : `${location.origin}/public/jsons/answers/${selectQuiz}/${urlPathPart}`;
 
-        const response = await fetch(fetchUrlPath, { cache: 'no-store' });
-        const answers: answerResultType[] = await response.json();
+            const response: Response = await fetch(fetchUrlPath, { cache: 'no-store' });
 
-        setFetchAnswersData(answers);
+            if (!response.ok) {
+                throw new Error(`createAnswersData：status / ${response.status} | fetch error occurred.`);
+            }
+
+            const contentType: string | null = response.headers.get('content-type');
+            // contentType が application/json ではない場合
+            if (contentType !== null && !contentType.includes('application/json')) {
+                throw new Error(`Expected JSON but got [${contentType}]`);
+            }
+
+            const answers: answerResultType[] = await response.json();
+
+            setFetchAnswersData(answers);
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                console.error(e);
+                alert(`${e.message}\nページを再読み込みします`);
+                location.reload();
+            }
+        }
     }
 
     return { createAnswersData }

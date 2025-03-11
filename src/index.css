@@ -190,37 +190,38 @@ body {
 
 .RootWrapper {
   padding: clamp(1em, calc(100vw/2), 2em) 0;
+  height: 100dvh;
 }
 
 /* 背景色を徐々に変更するスタイル */
 .RootWrapper,
 .bodyColor_00,
 .bodyColor_10 {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .bodyColor_01,
 .bodyColor_09 {
-  background-color: #dddddd;
+  background-color: #eeeeee;
 }
 
 .bodyColor_02,
 .bodyColor_08 {
-  background-color: #cccccc;
+  background-color: #dddddd;
 }
 
 .bodyColor_03,
 .bodyColor_07 {
-  background-color: #bbbbbb;
+  background-color: #cccccc;
 }
 
 .bodyColor_04,
 .bodyColor_06 {
-  background-color: #aaaaaa;
+  background-color: #bbbbbb;
 }
 
 .bodyColor_05 {
-  background-color: #999999;
+  background-color: #aaaaaa;
 }
 
 @media screen and (min-width: 1025px) {

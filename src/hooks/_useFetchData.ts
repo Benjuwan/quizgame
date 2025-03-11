@@ -22,12 +22,20 @@ export const useFetchData = () => {
                 throw new Error(`status is ${res.status} | fetch failed.`);
             }
 
+            const contentType: string | null = res.headers.get('content-type');
+            // contentType が application/json ではない場合
+            if (contentType !== null && !contentType.includes('application/json')) {
+                throw new Error(`Expected JSON but got [${contentType}]`);
+            }
+
             const resObj: quizType[] = await res.json();
             setFetchData(resObj);
         } catch (e: unknown) {
             // 型ガードで Error のハンドリング（※左辺オペランドが右辺オペランドのインスタンスであるかどうかを判定）
             if (e instanceof Error) {
                 console.error(e.message);
+                alert(`${e.message}\nページを再読み込みします`);
+                location.reload();
             }
         }
 

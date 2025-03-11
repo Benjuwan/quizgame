@@ -76,6 +76,8 @@ margin: 2.5em auto calc(100vw/4);
     }
 
 @media screen and (min-width: 700px){
+margin: 2.5em auto;
+
     & .mainContainer{
         padding: 2.5em;
 
