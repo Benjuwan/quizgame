@@ -9,7 +9,7 @@ export const Footer = memo(() => {
 
     return (
         <FooterElm>
-            <p><small>Copyright &copy; {currYear} QuizGame by <a href="https://github.com/benjuwan" target="_blank">benjuwan</a></small></p>
+            <p><small>Copyright &copy; {currYear} <a href="https://github.com/Benjuwan/quizgame" target="_blank">QuizGame by benjuwan</a></small></p>
         </FooterElm>
     );
 });
@@ -22,6 +22,6 @@ const FooterElm = styled.footer`
 }
 
 @media screen and (min-width: 700px){
-    margin-top: clamp(120px, calc(100vw/16), 240px);
+    margin-top: clamp(160px, calc(100vw/5), 320px);
 }
 `;
