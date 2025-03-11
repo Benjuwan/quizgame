@@ -35,8 +35,10 @@ export const useGetQuizResult = () => {
             }
         }
 
+        const absolute_100 = score / (questionCounter + 1); // 必ず 100 になるように計算調整
+
         const result: resultType = {
-            score: score
+            score: absolute_100
         }
 
         setScoreChecker(result);
