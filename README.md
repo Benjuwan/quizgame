@@ -1,14 +1,18 @@
 ## QuizGame
+
+<img width="1047" alt="Image" src="https://github.com/user-attachments/assets/e53ef7d4-a701-4f08-8045-fa6340b25c07" />
+
 ### コンセプト
 「誰でも100点が取れる（全問正解できる）」というコンセプトのクイズゲームです。常に全問正答して俺TUEEE（おれつえええ）という無双状態を体感し、自己肯定感を爆上げしてください。<br>
 もちろん、一般的なクイズの仕様（回答強制が無いver）にすることもできます。下記[質問内容シート](#質問内容シート)で記載している`adjust`（※ヒントを提示して選択不可にする）を用意しなければ通常の処理（回答強制が無いver）として機能します。
 
-## `build / deploy`時の調整箇所
-- `vite.config.ts`<br>`base`のコメントアウトを解除する（※サブディレクト配下へのデプロイ時のみ必要な対応）
-- `src/globalLibs/GlobalContext.tsx`
-  - `isDeploy`を`true`に切り替える
-  - `selectQuizDefaultValue`の初期値（クイズゲームの初期選択肢）を必要に応じて変更する
-  - `fetchUrlPath_forDeploy`のパス名を必要に応じて変更する
+<img width="757" alt="Image" src="https://github.com/user-attachments/assets/a87b514c-8e55-493b-b717-64c28ef75e18" />
+
+- 用途
+  - 脳トレ（認知症の予防とか）<br>間違った回答を選択した時点でヒントが表示されるので**振り返り + 脳への刺激になる**（かも？）
+  - 学習の振り返り<br>**語句や専門用語、構文などのチェックといった学習面**のほか、**定型的な業務フローの確認（新人教育）など業務面**といった振り返りに活用できる（かも？）
+  - 子どもの知育<br>表示された画像を含めて**楽しく学べる**（かも？）
+  - `adjust`（※回答強制機能）を用意しないことで一般的なクイズとして活用
 
 ## クイズゲームの選択肢シート
 - `public/jsons/select-quiz.json`<br>
@@ -26,6 +30,13 @@
 ## 質問回答シート
 - `public\jsons\answers`の各種`json`ファイル<br>
 得点（`point`の総合算）に応じた結果表示データ。デフォルトでは`low`,`medium`,`high`の3種類を用意。
+
+## `build / deploy`時の調整箇所
+- `vite.config.ts`<br>`base`のコメントアウトを解除する（※サブディレクト配下へのデプロイ時のみ必要な対応）
+- `src/globalLibs/GlobalContext.tsx`
+  - `isDeploy`を`true`に切り替える
+  - `selectQuizDefaultValue`の初期値（クイズゲームの初期選択肢）を必要に応じて変更する
+  - `fetchUrlPath_forDeploy`のパス名を必要に応じて変更する
 
 ## 技術構成
 - @eslint/js@9.22.0
