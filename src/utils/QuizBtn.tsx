@@ -16,7 +16,7 @@ export const QuizBtn = memo(({ fetchdataPromise }: { fetchdataPromise: Promise<q
 
     const { subscribeAnswers } = useSubscribeAnswers(getData);
     const { incrementAct, decrementAct } = useInputAct(getData.length - 1);
-    const { getQuizResult } = useGetQuizResult();
+    const { getQuizResult } = useGetQuizResult(getData);
 
     const increment: () => void = () => {
         const score: number | undefined = incrementAct();
