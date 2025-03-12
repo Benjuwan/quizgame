@@ -21,27 +21,29 @@ export const useInputAct = (finalQuestionCounter: number) => {
         spliceReplaceValue: string,
         spliceFinish_withDefault: number | undefined = 1
     ) => {
-        if (typeAssignment !== null) {
-            const targetKey: keyof quizChoicesType | undefined = convertTargetType(typeAssignment);
-
-            if (typeof targetKey === 'undefined') {
-                return;
-            }
-
-            /* quizCollectAnswerScoresType はオブジェクト（{ [choiceLabel: string]: string[]... }）なので、配列コピーして処理しないとオブジェクト全体として更新（choiceLabel の全配列の当該インデックス箇所に得点が格納）されてしまう */
-            const shallowCopy: string[] = [...quizCollectAnswerScores[targetKey]];
-
-            /* incrementAct： 設問別配列内('one' | 'two' | 'three')の当該配列の値を上書き（'' → jsonデータ内の当該設問point）*/
-            /* decrementAct： 設問別配列内('one' | 'two' | 'three')の当該配列の値をリセット（以前回答したjsonデータ内の当該設問point → ''）*/
-            shallowCopy.splice(spliceStart, spliceFinish_withDefault, spliceReplaceValue);
-
-            const updateQuizCollectAnswerScores: quizCollectAnswerScoresType = {
-                ...quizCollectAnswerScores,
-                [targetKey]: shallowCopy // 処理済み shallowCopy を格納
-            };
-
-            return updateQuizCollectAnswerScores;
+        if (typeAssignment === null) {
+            return; // 早期終了
         }
+
+        const targetKey: keyof quizChoicesType | undefined = convertTargetType(typeAssignment);
+
+        if (typeof targetKey === 'undefined') {
+            return;
+        }
+
+        /* quizCollectAnswerScoresType はオブジェクト（{ [choiceLabel: string]: string[]... }）なので、配列コピーして処理しないとオブジェクト全体として更新（choiceLabel の全配列の当該インデックス箇所に得点が格納）されてしまう */
+        const shallowCopy: string[] = [...quizCollectAnswerScores[targetKey]];
+
+        /* incrementAct： 設問別配列内('one' | 'two' | 'three')の当該配列の値を上書き（'' → jsonデータ内の当該設問point）*/
+        /* decrementAct： 設問別配列内('one' | 'two' | 'three')の当該配列の値をリセット（以前回答したjsonデータ内の当該設問point → ''）*/
+        shallowCopy.splice(spliceStart, spliceFinish_withDefault, spliceReplaceValue);
+
+        const updateQuizCollectAnswerScores: quizCollectAnswerScoresType = {
+            ...quizCollectAnswerScores,
+            [targetKey]: shallowCopy // 処理済み shallowCopy を格納
+        };
+
+        return updateQuizCollectAnswerScores;
     }
 
     const incrementAct: () => number | undefined = () => {
