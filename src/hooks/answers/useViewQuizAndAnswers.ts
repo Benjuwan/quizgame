@@ -24,13 +24,22 @@ export const useViewQuizAndAnswers = (getData: quizType[]) => {
          * 次に その条件を基に filter処理で undefined のものをはじく（＝ 先の map処理により yourAnsweredType のものだけが返される）ので元の配列順序が維持できる処理の流れにしている
          * ……が、後工程で順序が乱れるため questionNumber（質問の順番）を用意して後から明示的にソートしている
         */
-        const quizChoices = getData.map((quizData, i) => {
+        const quizChoices = [...getData].map((quizData, i) => {
             return {
                 questionNumber: i + 1,
                 quiz: quizData.quiz,
                 choices: quizData.choices
             }
         });
+
+        /* 正答の抽出（オブジェクト：choices の値から「得点数100の各正答」を取得して flat で一元配列化）*/
+        const correctAnswers: string[] = [...getData].map(quizData => {
+            return Object.values(quizData.choices).map(value => {
+                if (value.point === '100') {
+                    return value.txt;
+                }
+            }).filter((value): value is string => typeof value !== 'undefined');
+        }).flat();
 
         // ユーザーの選択した回答を（元データ：getData から）抽出
         const theAnswered: yourAnsweredType[] = Object.entries(quizChoices).map((choice, i) => {
@@ -42,6 +51,7 @@ export const useViewQuizAndAnswers = (getData: quizType[]) => {
                     questionNumber: choice[1].questionNumber,
                     question: choice[1].quiz,
                     answered: choice[1].choices[targetPositon].txt,
+                    correctAnswer: correctAnswers[i],
                     score: choice[1].choices[targetPositon].point
                 }
             }

@@ -48,5 +48,6 @@ export type yourAnsweredType = {
     questionNumber: number;
     question: string;
     answered: string;
+    correctAnswer: string;
     score: string;
 };

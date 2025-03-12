@@ -73,6 +73,7 @@ export const ViewAnswers = memo(({ fetchdataPromise }: { fetchdataPromise: Promi
                                             {viewQuizAndAnswer.question}
                                         </p>
                                         <p><span>回答：</span>{viewQuizAndAnswer.answered}</p>
+                                        <p><span>正答：</span>{viewQuizAndAnswer.correctAnswer}</p>
                                     </li>
                                 ))}
                             </ul>
