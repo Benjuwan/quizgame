@@ -190,7 +190,6 @@ body {
 
 .RootWrapper {
   padding: clamp(1em, calc(100vw/2), 2em) 0;
-  height: 100dvh;
 }
 
 /* 背景色を徐々に変更するスタイル */
