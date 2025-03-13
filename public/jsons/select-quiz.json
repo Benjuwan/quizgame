@@ -4,19 +4,35 @@
         "plainTxt": "色々な動物たち"
     },
     {
+        "value": "child",
+        "plainTxt": "子どもの知育"
+    },
+    {
         "value": "geo",
         "plainTxt": "地理・自然"
     },
     {
         "value": "historical",
-        "plainTxt": "歴史（世界史・日本史）"
+        "plainTxt": "歴史（主に日本について）"
     },
     {
-        "value": "web-front",
-        "plainTxt": "webサイト制作関連"
+        "value": "business",
+        "plainTxt": "ビジネス・社会"
     },
     {
         "value": "lifehack",
         "plainTxt": "ライフハック"
+    },
+    {
+        "value": "popular",
+        "plainTxt": "一般教養"
+    },
+    {
+        "value": "tech",
+        "plainTxt": "IT・コンピューター全般"
+    },
+    {
+        "value": "web-front",
+        "plainTxt": "webサイト制作関連"
     }
 ]

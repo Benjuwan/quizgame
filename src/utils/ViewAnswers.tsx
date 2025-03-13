@@ -72,8 +72,8 @@ export const ViewAnswers = memo(({ fetchdataPromise }: { fetchdataPromise: Promi
                                             </span>
                                             {viewQuizAndAnswer.question}
                                         </p>
-                                        <p><span>回答：</span>{viewQuizAndAnswer.answered}</p>
-                                        <p><span>正答：</span>{viewQuizAndAnswer.correctAnswer}</p>
+                                        <p><span className="answered">回答：</span>{viewQuizAndAnswer.answered}</p>
+                                        <p><span className="correctAnswer">正答：</span>{viewQuizAndAnswer.correctAnswer}</p>
                                     </li>
                                 ))}
                             </ul>
@@ -166,6 +166,14 @@ const ViewAnswersElm = styled.div`
                             display: block;
                             text-indent: -1em;
                             font-weight: bold;
+
+                            &.answered{
+                                color: #196cca;
+                            }
+                            
+                            &.correctAnswer{
+                                color: #158815;
+                            }
                         }
                     }
 

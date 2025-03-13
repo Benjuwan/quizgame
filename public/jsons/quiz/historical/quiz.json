@@ -1,161 +1,205 @@
 [
     {
-        "quiz": "幕末の志士であり、日本の近代化に尽力した人物は？",
-        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsYonxr321FMa4c_j17lDWbOgstUSckmgtJET2FfDIMsiGeV5TcrNYTq8ORIaolk5hf_Rbkgo5rZr5_MXw-WxXMFdgTMororolp3qijpPdXzCSIiGo2K080KA4CV0eS6KFQuAA5dKkJ6Xu/s800/nigaoe_sakamoto_ryouma.png",
+        "quiz": "日本の国花とされる花はどれですか？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1nV8sgLHA9KYWt9ooBS2EQlVMreisejrB7yeuL8-I15m3nT86vcT6HgZOSEwjkX3m2YfhydxUKNlyaqRf1Wy8N_Mp8Y329F2kx8GuULD_x8mj5ItRZm5U_woMY_On6GL5N1sgNLZORb0/s800/sakura_fubuki.png",
         "choices": {
             "one": {
-                "txt": "徳川家康",
-                "point": "10",
-                "adjust": "家康は江戸幕府を開いた将軍だね。"
+                "txt": "菊",
+                "point": "0",
+                "adjust": [
+                    "菊も日本の国花の一つですが、一般的には桜が国花とされることが多いです。実は日本には法律で定められた国花はありませんが、桜と菊が非公式な国花として認識されています。",
+                    "菊は皇室の紋章にも使われており、重要な花です。",
+                    "そのため部分点が与えられています。"
+                ]
             },
             "two": {
-                "txt": "足利義満",
+                "txt": "チューリップ",
                 "point": "0",
-                "adjust": "義満は室町幕府の将軍だね。"
+                "adjust": "チューリップは日本の国花ではありません。日本の国花は桜（または菊）とされています。"
             },
             "three": {
-                "txt": "坂本龍馬",
+                "txt": "桜",
                 "point": "100"
             }
         }
     },
     {
-        "quiz": "世界史における産業革命が最初に起こった国は？",
+        "quiz": "日本の伝統的な「和食」の特徴として正しいのはどれ？",
         "imgsrc": "",
         "choices": {
             "one": {
-                "txt": "イギリス",
+                "txt": "「一汁三菜」を基本とする",
                 "point": "100"
             },
             "two": {
-                "txt": "フランス",
-                "point": "10",
-                "adjust": "フランスではなく、産業革命の発祥はその近くにある島国だよ。"
+                "txt": "「二汁五菜」を基本とする",
+                "point": "0",
+                "adjust": "和食の基本は「二汁五菜」ではなく「一汁三菜」です。一汁三菜とは、ご飯、汁物、主菜1品と副菜2品の構成を指します。"
             },
             "three": {
-                "txt": "アメリカ",
+                "txt": "主食はパンを基本とする",
                 "point": "0",
-                "adjust": "アメリカのは「シェールガス革命」あるいは「シェール革命」だね。"
+                "adjust": "和食の主食はパンではなく、ご飯（米）です。和食は「一汁三菜」を基本としています。"
             }
         }
     },
     {
-        "quiz": "第二次世界大戦後に発足し、現在の平和と安全を維持するために活動する国際組織は？",
+        "quiz": "源平合戦の「壇ノ浦の戦い」で敗れた武将は？",
         "imgsrc": "",
         "choices": {
             "one": {
-                "txt": "国際オリンピック委員会",
-                "point": "10",
-                "adjust": "オリンピックを運営する組織だね。"
+                "txt": "源義経",
+                "point": "0",
+                "adjust": "源義経は源氏の武将で、壇ノ浦の戦いでは勝利した側です。敗れたのは平家の平知盛です。"
             },
             "two": {
-                "txt": "国際連合",
+                "txt": "平知盛",
                 "point": "100"
             },
             "three": {
-                "txt": "国際赤十字",
-                "point": "0",
-                "adjust": "医療支援を行う団体だよね。"
-            }
-        }
-    },
-    {
-        "quiz": "古代エジプトのピラミッドを建設した王として有名な人物は？",
-        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhv4zjoN9Hum0JKn2uSFFxCDG0O_QkJ9OZSJYHcpWqufTjr_uAo2-26KF1wvP8KbRoxnghpxh5Y27TWtbnuyx7HLvTk6T2JsGs4z76DQwTDSp2gYcg0EB_Cgv2NwuT9UKd-gaUA20gSLR3e/s800/world_giza_pyramid.png",
-        "choices": {
-            "one": {
-                "txt": "ラムセス2世",
-                "point": "0",
-                "adjust": "ラムセス2世は建築王と呼ばれたが、ピラミッドの時代より後だね。"
-            },
-            "two": {
-                "txt": "クフ王",
-                "point": "100"
-            },
-            "three": {
-                "txt": "ツタンカーメン",
-                "point": "10",
-                "adjust": "ツタンカーメンは黄金のマスクで有名だね。"
-            }
-        }
-    },
-    {
-        "quiz": "戦国時代に「天下布武」を掲げた武将は？",
-        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhROzp9LWz_dfEfkdXVZSb6Qk7FfxmabvnRfYPV3LMW10L4OsGcM2L5JnLJjZKoFlcFVw8VIDK8Q1bznEy5vYw-gFiKIdBjcdirWkh-oIZHltUuDn1WGWyE3zxR5lJ-x51qdplQ-FyeYPYK/s800/nigaoe_oda_nobunaga.png",
-        "choices": {
-            "one": {
-                "txt": "豊臣秀吉",
-                "point": "10",
-                "adjust": "秀吉は信長の家臣から天下人になった人物だね。"
-            },
-            "two": {
                 "txt": "織田信長",
+                "point": "0",
+                "adjust": "織田信長は室町時代末期から安土桃山時代の武将で、源平合戦（平安時代末期）とは時代が異なります。壇ノ浦の戦いで敗れたのは平家の平知盛です。"
+            }
+        }
+    },
+    {
+        "quiz": "江戸時代の身分制度「士農工商」の順番で正しいのはどれ？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "武士・農民・商人・職人",
+                "point": "0",
+                "adjust": "「士農工商」の正しい順番は「武士・農民・職人・商人」です。武士が最上位、次に農民、職人、商人の順でした。"
+            },
+            "two": {
+                "txt": "武士・農民・職人・商人",
                 "point": "100"
             },
             "three": {
+                "txt": "商人・職人・農民・武士",
+                "point": "0",
+                "adjust": "これは逆順です。「士農工商」の正しい順番は「武士・農民・職人・商人」で、武士が最上位でした。"
+            }
+        }
+    },
+    {
+        "quiz": "日本の伝統芸能「歌舞伎」の特徴として正しいのはどれ？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6a3HJ4kjBPGaW_jaJhgzhL1bUJnbg4FoIha1aAyRSKpDusaXYlWkq6SSs0BoR1GTqNzJcbjQav2TY1v07vg_-WFwfsTrvDAmsSbNH7QW95aMGgl7qMdgQSnmoKGoaMYBDFlVAJ5KWPQXe/s800/renjishi_red.png",
+        "choices": {
+            "one": {
+                "txt": "全ての役を女性が演じる",
+                "point": "0",
+                "adjust": "歌舞伎では全ての役を男性が演じます。女性が全ての役を演じるのは「宝塚歌劇団」が有名です。"
+            },
+            "two": {
+                "txt": "全ての役を男性が演じる",
+                "point": "100"
+            },
+            "three": {
+                "txt": "必ず仮面をつけて演じる",
+                "point": "0",
+                "adjust": "仮面をつけて演じるのは「能」の特徴です。歌舞伎では独特の化粧「隈取」を施して演じます。"
+            }
+        }
+    },
+    {
+        "quiz": "明治維新の三大改革とされるのはどれ？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "廃藩置県・学制・徴兵令",
+                "point": "100"
+            },
+            "two": {
+                "txt": "大化の改新・楽市楽座・参勤交代",
+                "point": "0",
+                "adjust": "これらは異なる時代の改革です。明治維新の三大改革は「廃藩置県・学制・徴兵令」とされています。"
+            },
+            "three": {
+                "txt": "五箇条の御誓文・和同開珎・日米和親条約",
+                "point": "0",
+                "adjust": "これらは異なる時代の出来事です。明治維新の三大改革は「廃藩置県・学制・徴兵令」とされています。"
+            }
+        }
+    },
+    {
+        "quiz": "「日本書紀」と「古事記」の違いとして正しいのはどれ？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "「日本書紀」は公式な歴史書、「古事記」は日本の神話や伝承を中心にまとめた書物",
+                "point": "100"
+            },
+            "two": {
+                "txt": "「日本書紀」は鎌倉時代、「古事記」は江戸時代に編纂された",
+                "point": "0",
+                "adjust": "両書とも奈良時代に編纂されました。「古事記」は和銅5年（712年）、「日本書紀」は養老4年（720年）の完成です。"
+            },
+            "three": {
+                "txt": "「日本書紀」は仮名文字、「古事記」は漢文で書かれている",
+                "point": "0",
+                "adjust": "逆です。「日本書紀」は漢文体、「古事記」は和文体（漢字と仮名の混合）で書かれています。"
+            }
+        }
+    },
+    {
+        "quiz": "日本の茶道で使われる「わび・さび」の考え方に最も近いのは？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "豪華で華やかな美しさを追求する",
+                "point": "0",
+                "adjust": "「わび・さび」は質素や簡素の中に見出す美意識で、豪華さや華やかさとは逆の考え方です。"
+            },
+            "two": {
+                "txt": "質素・簡素の中に見出す美意識",
+                "point": "100"
+            },
+            "three": {
+                "txt": "対称的で均整のとれた美しさを重視する",
+                "point": "0",
+                "adjust": "「わび・さび」は非対称や不完全さの中にも美を見出す考え方で、整然とした対称性を重視するものではありません。"
+            }
+        }
+    },
+    {
+        "quiz": "次のうち、江戸幕府を開いた将軍は誰？",
+        "imgsrc": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirCQSVSlUNMOcYzAlauj4HJyaPbpu98tvbY5YnpPrIPLPdRTsQMTj60FXnkk9wNseRo7jH2h8cTAi3P87V1HCqg_RFqajojxMvnqunHHv3OznvHjlpSDnKPPWvvKiA5qSKyE0rIK3_XMN3/s800/nigaoe_tokugawa_ieyasu.png",
+        "choices": {
+            "one": {
                 "txt": "徳川家康",
+                "point": "100"
+            },
+            "two": {
+                "txt": "豊臣秀吉",
                 "point": "0",
-                "adjust": "家康は江戸幕府を開いた人物だね。"
+                "adjust": "豊臣秀吉は関白・太閤となりましたが、江戸幕府を開いたのは徳川家康です。"
+            },
+            "three": {
+                "txt": "織田信長",
+                "point": "0",
+                "adjust": "織田信長は天下統一を目指しましたが、本能寺の変で死去し、江戸幕府を開いたのは徳川家康です。"
             }
         }
     },
     {
-        "quiz": "第一次世界大戦が勃発した年は？",
+        "quiz": "日本の伝統的な住居の特徴として正しいのはどれ？",
         "imgsrc": "",
         "choices": {
             "one": {
-                "txt": "1939年",
-                "point": "10",
-                "adjust": "1939年は第二次世界大戦の開始年だね。"
-            },
-            "two": {
-                "txt": "1905年",
+                "txt": "レンガ造りの頑丈な壁",
                 "point": "0",
-                "adjust": "日露戦争があった年だね。"
-            },
-            "three": {
-                "txt": "1914年",
-                "point": "100"
-            }
-        }
-    },
-    {
-        "quiz": "中世ヨーロッパで領主が農奴に土地を貸し与え、代わりに働かせた制度は？",
-        "imgsrc": "",
-        "choices": {
-            "one": {
-                "txt": "封建制度",
-                "point": "100"
+                "adjust": "レンガ造りは西洋建築の特徴です。日本の伝統的な住居は木造建築で、障子や襖などの可動式の間仕切りが特徴です。"
             },
             "two": {
-                "txt": "共和制",
-                "point": "10",
-                "adjust": "共和制は民衆が統治に関わる体制だね。"
-            },
-            "three": {
-                "txt": "帝政",
-                "point": "0",
-                "adjust": "帝政は皇帝が統治する政治体制だね。"
-            }
-        }
-    },
-    {
-        "quiz": "日本で最初に憲法が制定されたのは何年？",
-        "imgsrc": "",
-        "choices": {
-            "one": {
-                "txt": "1947年",
-                "point": "10",
-                "adjust": "1947年は日本国憲法の施行年だね。"
-            },
-            "two": {
-                "txt": "1889年",
+                "txt": "畳や障子、襖などの可動式の間仕切り",
                 "point": "100"
             },
             "three": {
-                "txt": "1868年",
+                "txt": "コンクリート製の床",
                 "point": "0",
-                "adjust": "明治維新の年だね。"
+                "adjust": "コンクリート製の床は現代建築の特徴です。日本の伝統的な住居は木造で、床は板張りや畳が使われています。"
             }
         }
     }
