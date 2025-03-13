@@ -110,7 +110,7 @@ const ViewAnswersElm = styled.div`
         width: clamp(280px, 100%, 640px);
         margin: 0 auto;
         padding: 2.5em;
-        background-color: #cdcdcd;
+        background-color: #dadada;
         border-radius: 4px;
 
         & h2{
