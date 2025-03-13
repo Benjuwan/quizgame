@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { memo, Suspense, useContext } from "react";
 import { SelectQuizContext } from "./providers/SelectQuizContext";
 import { selectQuizType } from "./ts/typeQuiz";
-import { isDeploy, fetchUrlPath_forDeploy } from "./common/isDeploy";
 import { SelectQuiz } from "./utils/SelectQuiz";
 import { FetchDataAndLoading } from "./FetchDataAndLoading";
 
@@ -10,7 +9,7 @@ export const FirstViewer = memo(() => {
     const { selectQuiz } = useContext(SelectQuizContext);
 
     // クイズゲームの選択肢シートのフェッチ処理
-    const fetchSelectQuizPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/select-quiz.json` : `${location.origin}/public/jsons/select-quiz.json`;
+    const fetchSelectQuizPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/select-quiz.json`;
 
     // ※ await はしない。Promise を返す記述にする。Promise が未完了ならサスペンド状態となる（Suspense の fallback が返る） 
     const fetchSelectQuizDataPromise: Promise<selectQuizType[]> = fetch(fetchSelectQuizPathUrl).then(res => res.json());

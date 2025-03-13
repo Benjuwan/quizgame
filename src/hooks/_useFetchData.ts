@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { quizType } from "../ts/typeQuiz";
-import { fetchUrlPath_forDeploy, isDeploy, selectQuizDefaultValue } from "../common/isDeploy";
+import { selectQuizDefaultValue } from "../common/isDeploy";
 
 export const useFetchData = () => {
     // const { setFetchData } = useContext(FetchDataContext);
@@ -12,7 +12,7 @@ export const useFetchData = () => {
         try {
             const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : selectQuizDefaultValue}/quiz.json`;
 
-            const fetchPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/${dynamicFetchPathUrl}` : `${location.origin}/public/jsons/quiz/${dynamicFetchPathUrl}`;
+            const fetchPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/quiz/${dynamicFetchPathUrl}`;
 
             const res: Response = await fetch(fetchPathUrl, {
                 cache: 'no-store'

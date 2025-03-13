@@ -33,12 +33,17 @@
 - `public\jsons\answers`の各種`json`ファイル<br>
 得点（`point`の総合算）に応じた結果表示データ。デフォルトでは`low`,`medium`,`high`の3種類を用意。
 
+## 環境変数
+```bash
+# vite プロジェクトなので VITE_ を前置する
+VITE_FETCH_URL = "http://localhost:5173/public/jsons"
+# 本環境ではサイトURL（https://quizgame-benjuwan.vercel.app）を指定
+```
+- [環境変数 | 環境変数とモード](https://ja.vite.dev/guide/env-and-mode.html#env-variables)
+
 ## `build / deploy`時の調整箇所
-- `vite.config.ts`<br>`base`のコメントアウトを解除する（※サブディレクト配下へのデプロイ時のみ必要な対応）
 - `src/globalLibs/GlobalContext.tsx`
-  - `isDeploy`を`true`に切り替える
   - `selectQuizDefaultValue`の初期値（クイズゲームの初期選択肢）を必要に応じて変更する
-  - `fetchUrlPath_forDeploy`のパス名を必要に応じて変更する
 
 ## 技術構成
 - @eslint/js@9.22.0
