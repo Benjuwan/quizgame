@@ -5,4 +5,4 @@ export const isDeploy: boolean = false;
 export const selectQuizDefaultValue: string = 'animal';
 
 // クイズゲームのフェッチ用URLパス
-export const fetchUrlPath_forDeploy: string = 'https://k2webservice.xsrv.jp/r0105/hoge/jsons';
+export const fetchUrlPath_forDeploy: string = 'https://quizgame-benjuwan.vercel.app/jsons';
