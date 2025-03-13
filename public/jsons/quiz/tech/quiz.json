@@ -1,0 +1,182 @@
+[
+    {
+        "quiz": "「WWW」は何の略称ですか？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "World Wide Web",
+                "point": "100"
+            },
+            "two": {
+                "txt": "World Weather Watch",
+                "point": "0",
+                "adjust": "WWWは「World Weather Watch」ではなく、「World Wide Web」の略称です。インターネット上の情報空間を指します。"
+            },
+            "three": {
+                "txt": "World War Winner",
+                "point": "0",
+                "adjust": "WWWは「World War Winner」ではなく、「World Wide Web」の略称です。インターネット上の情報空間を指します。"
+            }
+        }
+    },
+    {
+        "quiz": "コンピュータの基本構成要素「CPU」は何の略？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "Computer Programming Unit",
+                "point": "0",
+                "adjust": "CPUは「Computer Programming Unit」ではなく、「Central Processing Unit（中央処理装置）」の略称です。"
+            },
+            "two": {
+                "txt": "Central Processing Unit",
+                "point": "100"
+            },
+            "three": {
+                "txt": "Control Panel Unit",
+                "point": "0",
+                "adjust": "CPUは「Control Panel Unit」ではなく、「Central Processing Unit（中央処理装置）」の略称です。"
+            }
+        }
+    },
+    {
+        "quiz": "インターネットでWebページを閲覧するために使用するソフトウェアは？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "ワープロソフト",
+                "point": "0",
+                "adjust": "ワープロソフトは文書作成のためのソフトウェアです。Webページを閲覧するには「Webブラウザ」を使用します。"
+            },
+            "two": {
+                "txt": "Webブラウザ",
+                "point": "100"
+            },
+            "three": {
+                "txt": "表計算ソフト",
+                "point": "0",
+                "adjust": "表計算ソフトは数値計算やデータ管理のためのソフトウェアです。Webページを閲覧するには「Webブラウザ」を使用します。"
+            }
+        }
+    },
+    {
+        "quiz": "「URL」とは何の略称ですか？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "Universal Resource Locator",
+                "point": "0",
+                "adjust": "URLは「Universal Resource Locator」ではなく、「Uniform Resource Locator」の略称です。インターネット上のリソースの場所を示す識別子です。"
+            },
+            "two": {
+                "txt": "Uniform Resource Locator",
+                "point": "100"
+            },
+            "three": {
+                "txt": "Unity Resource Library",
+                "point": "0",
+                "adjust": "URLは「Unity Resource Library」ではなく、「Uniform Resource Locator」の略称です。インターネット上のリソースの場所を示す識別子です。"
+            }
+        }
+    },
+    {
+        "quiz": "データの量を表す単位で、1ギガバイト（GB）は何メガバイト（MB）ですか？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "100MB",
+                "point": "0",
+                "adjust": "1ギガバイト（GB）は100MBではなく、1024MBです（厳密には1000MBと定義する場合もあります）。"
+            },
+            "two": {
+                "txt": "1024MB",
+                "point": "100"
+            },
+            "three": {
+                "txt": "10000MB",
+                "point": "0",
+                "adjust": "1ギガバイト（GB）は10000MBではなく、1024MBです（厳密には1000MBと定義する場合もあります）。"
+            }
+        }
+    },
+    {
+        "quiz": "パソコンのキーボードにある「Ctrl」キーは何の略？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "Control",
+                "point": "100"
+            },
+            "two": {
+                "txt": "Center",
+                "point": "0",
+                "adjust": "「Ctrl」キーは「Center」ではなく、「Control（コントロール）」の略称です。"
+            },
+            "three": {
+                "txt": "Current",
+                "point": "0",
+                "adjust": "「Ctrl」キーは「Current」ではなく、「Control（コントロール）」の略称です。"
+            }
+        }
+    },
+    {
+        "quiz": "Windowsのファイル名で使用できない記号はどれ？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "_(アンダースコア)",
+                "point": "0",
+                "adjust": "アンダースコア（_）はWindowsのファイル名で使用できます。使用できないのは「/（スラッシュ）」「\\（バックスラッシュ）」「:（コロン）」「*（アスタリスク）」「?（クエスチョンマーク）」「\"（ダブルクォーテーション）」「<（小なり）」「>（大なり）」「|（パイプ）」です。"
+            },
+            "two": {
+                "txt": "-(ハイフン)",
+                "point": "0",
+                "adjust": "ハイフン（-）はWindowsのファイル名で使用できます。使用できないのは「/（スラッシュ）」「\\（バックスラッシュ）」「:（コロン）」「*（アスタリスク）」「?（クエスチョンマーク）」「\"（ダブルクォーテーション）」「<（小なり）」「>（大なり）」「|（パイプ）」です。"
+            },
+            "three": {
+                "txt": "/(スラッシュ)",
+                "point": "100"
+            }
+        }
+    },
+    {
+        "quiz": "電子メールアドレスの構成で正しいのはどれ？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "ユーザー名@ドメイン名",
+                "point": "100"
+            },
+            "two": {
+                "txt": "ドメイン名@ユーザー名",
+                "point": "0",
+                "adjust": "電子メールアドレスの構成は「ドメイン名@ユーザー名」ではなく、「ユーザー名@ドメイン名」です。例：user@example.com"
+            },
+            "three": {
+                "txt": "ユーザー名.ドメイン名",
+                "point": "0",
+                "adjust": "電子メールアドレスの構成は「ユーザー名.ドメイン名」ではなく、「ユーザー名@ドメイン名」です。@（アットマーク）が必須です。"
+            }
+        }
+    },
+    {
+        "quiz": "パスワードの安全性を高める方法として適切なのはどれ？",
+        "imgsrc": "",
+        "choices": {
+            "one": {
+                "txt": "誕生日や名前など覚えやすい情報を使う",
+                "point": "0",
+                "adjust": "誕生日や名前は推測されやすいため、パスワードには適していません。大文字・小文字・数字・記号を組み合わせた複雑なパスワードが安全です。"
+            },
+            "two": {
+                "txt": "大文字・小文字・数字・記号を組み合わせた長いパスワードを使う",
+                "point": "100"
+            },
+            "three": {
+                "txt": "全てのサービスで同じパスワードを使う",
+                "point": "0",
+                "adjust": "全てのサービスで同じパスワードを使うと、1つのサービスが漏洩した場合に全てのアカウントが危険にさらされます。サービスごとに異なるパスワードを使用するべきです。"
+            }
+        }
+    }
+]
