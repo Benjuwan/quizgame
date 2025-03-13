@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { memo, Suspense, useContext } from "react";
-import { fetchUrlPath_forDeploy, isDeploy, selectQuizDefaultValue } from "./common/isDeploy";
+import { selectQuizDefaultValue } from "./common/isDeploy";
 import { SelectQuizContext } from "./providers/SelectQuizContext";
 import { quizType } from "./ts/typeQuiz";
 import { Loading } from "./common/loading";
@@ -15,7 +15,7 @@ export const FetchDataAndLoading = memo(() => {
 
     const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : selectQuizDefaultValue}/quiz.json`;
 
-    const fetchPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/quiz/${dynamicFetchPathUrl}` : `${location.origin}/public/jsons/quiz/${dynamicFetchPathUrl}`;
+    const fetchPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/quiz/${dynamicFetchPathUrl}`;
 
     // ※ await はしない。Promise を返す記述にする。Promise が未完了ならサスペンド状態となる（Suspense の fallback が返る） 
     const fetchdataPromise: Promise<quizType[]> = fetch(fetchPathUrl).then(res => res.json());
