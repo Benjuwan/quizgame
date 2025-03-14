@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Loading = () => {
     return (
         <LoadingElm>
-            <p>Data Loading</p>
+            <p>Data Loading...</p>
         </LoadingElm>
     );
 }
