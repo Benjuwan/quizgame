@@ -1,5 +1,9 @@
 [
     {
+        "value": "popular",
+        "plainTxt": "一般教養"
+    },
+    {
         "value": "animal",
         "plainTxt": "色々な動物たち"
     },
@@ -16,16 +20,8 @@
         "plainTxt": "歴史（主に日本について）"
     },
     {
-        "value": "business",
-        "plainTxt": "ビジネス・社会"
-    },
-    {
         "value": "lifehack",
         "plainTxt": "ライフハック"
-    },
-    {
-        "value": "popular",
-        "plainTxt": "一般教養"
     },
     {
         "value": "tech",
@@ -34,5 +30,9 @@
     {
         "value": "web-front",
         "plainTxt": "webサイト制作関連"
+    },
+    {
+        "value": "business",
+        "plainTxt": "ビジネス・社会（※回答強制なし）"
     }
 ]

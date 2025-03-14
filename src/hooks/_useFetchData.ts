@@ -12,7 +12,7 @@ export const useFetchData = () => {
         try {
             const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : selectQuizDefaultValue}/quiz.json`;
 
-            const fetchPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/quiz/${dynamicFetchPathUrl}`;
+            const fetchPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/jsons/quiz/${dynamicFetchPathUrl}`;
 
             const res: Response = await fetch(fetchPathUrl, {
                 cache: 'no-store'

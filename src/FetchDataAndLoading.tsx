@@ -15,7 +15,7 @@ export const FetchDataAndLoading = memo(() => {
 
     const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : selectQuizDefaultValue}/quiz.json`;
 
-    const fetchPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/quiz/${dynamicFetchPathUrl}`;
+    const fetchPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/jsons/quiz/${dynamicFetchPathUrl}`;
 
     // ※ await はしない。Promise を返す記述にする。Promise が未完了ならサスペンド状態となる（Suspense の fallback が返る） 
     const fetchdataPromise: Promise<quizType[]> = fetch(fetchPathUrl).then(res => res.json());
