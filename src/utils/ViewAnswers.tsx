@@ -109,7 +109,7 @@ const ViewAnswersElm = styled.div`
     .resultViewTxt{
         width: clamp(280px, 100%, 640px);
         margin: 0 auto;
-        padding: 2.5em;
+        padding: 2.5em 1em;
         background-color: #dadada;
         border-radius: 4px;
 
@@ -118,14 +118,6 @@ const ViewAnswersElm = styled.div`
             font-size: clamp(24px, calc(100vw/24), 32px);
             font-weight: normal;
             margin-bottom: 1em;
-        }
-
-        & #wikiTxt{
-            width: 100%;
-            font-style: italic;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 8px;
         }
         
         .viewQuizAndAnswers {
@@ -305,10 +297,6 @@ const ViewAnswersElm = styled.div`
             font-size: 32px;
         }
 
-        & #wikiTxt{
-            font-size: 12px;
-        }
-
         & .viewQuizAndAnswers {
             font-size: 14px;
 
@@ -336,7 +324,7 @@ const ViewAnswersElm = styled.div`
 
     .resultViewTxt{
         width: clamp(280px,100%,1080px);
-        padding: 24px;
+        padding: 2.5em;
     }
 }
 `;
