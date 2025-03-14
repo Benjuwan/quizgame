@@ -38,7 +38,7 @@ const FirstViewerElm = styled.main`
 margin: 2.5em auto calc(100vw/4);
 
     & .mainContainer{
-        padding: 2em 2.5em calc(100vw/4);
+        padding: 2.5em 1em;
 
         & .description{
             width: clamp(240px, 100%, 800px);
