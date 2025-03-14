@@ -9,7 +9,7 @@ export const useCreateAnswersData = () => {
 
     const createAnswersData: (urlPathPart: string) => void = async (urlPathPart: string) => {
         try {
-            const fetchUrlPath: string = `${import.meta.env.VITE_FETCH_URL}/answers/${selectQuiz}/${urlPathPart}`;
+            const fetchUrlPath: string = `${import.meta.env.VITE_FETCH_URL}/jsons/answers/${selectQuiz}/${urlPathPart}`;
 
             const response: Response = await fetch(fetchUrlPath, { cache: 'no-store' });
 

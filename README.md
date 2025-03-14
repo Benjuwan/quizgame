@@ -34,16 +34,79 @@
 得点（`point`の総合算）に応じた結果表示データ。デフォルトでは`low`,`medium`,`high`の3種類を用意。
 
 ## 環境変数
+- [環境変数 | 環境変数とモード](https://ja.vite.dev/guide/env-and-mode.html#env-variables)<br>
+`vite`プロジェクトなので環境変数に`VITE_`を前置しています。
 ```bash
-# vite プロジェクトなので VITE_ を前置する
-VITE_FETCH_URL = "http://localhost:5173/public/jsons"
 # 本環境ではサイトURL（https://quizgame-benjuwan.vercel.app）を指定
+VITE_FETCH_URL = "http://localhost:5173/public"
 ```
-- [環境変数 | 環境変数とモード](https://ja.vite.dev/guide/env-and-mode.html#env-variables)
 
 ## `build / deploy`時の調整箇所
+### 環境変数を使用時
 - `src/globalLibs/GlobalContext.tsx`
-  - `selectQuizDefaultValue`の初期値（クイズゲームの初期選択肢）を必要に応じて変更する
+  - 【任意】`selectQuizDefaultValue`の初期値（クイズゲームの初期選択肢）を必要に応じて変更する
+
+### 環境変数に対応していないホスティング先の場合
+<details>
+<summary>環境変数に対応していないホスティング先の場合</summary>
+
+- `vite.config.ts`<br>
+`base`のコメントアウトを解除する（※サブディレクト配下（サブドメイン）へのデプロイ時のみ必要）
+```diff
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
++  base: '/subdomain/hoge',
+})
+```
+
+- `src/common/isDeploy.ts`
+  - `isDeploy`を`true`に切り替える
+  - 【任意】`selectQuizDefaultValue`の初期値（クイズゲームの初期選択肢）を必要に応じて変更する
+  - 【任意】`fetchUrlPath_forDeploy`のパス名を必要に応じて変更する
+```diff
+// クイズゲームの選択肢のデフォルト値
+export const selectQuizDefaultValue: string = 'animal';
+
++ // デプロイ時は true に
++ export const isDeploy: boolean = false;
+
++ // クイズゲームのフェッチ用URLパス（※サブドメイン不要（ルート直下）の場合は /subdomain/hoge を削除）
++ export const fetchUrlPath_forDeploy: string = 'https://domain/subdomain/hoge/jsons'; // 末尾に jsons は必須
+```
+
+- フェッチ方法の変更・調整
+  - `src/FetchDataAndLoading.tsx`
+```diff
+const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : selectQuizDefaultValue}/quiz.json`;
+
++ const fetchPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/quiz/${dynamicFetchPathUrl}` : `${location.origin}/public/jsons/quiz/${dynamicFetchPathUrl}`;
+- const fetchPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/jsons/quiz/${dynamicFetchPathUrl}`;
+```
+  - `src/FirstViewer.tsx`
+```diff
+// クイズゲームの選択肢シートのフェッチ処理
++ const fetchSelectQuizPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/select-quiz.json` : `${location.origin}/public/jsons/select-quiz.json`;
+- const fetchSelectQuizPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/jsons/select-quiz.json`;
+```
+  - `src/hooks/answers/useCreateAnswersData.ts`
+```diff
+const createAnswersData: (urlPathPart: string) => void = async (urlPathPart: string) => {
+try {
++  const fetchUrlPath: string = isDeploy ? `${fetchUrlPath_forDeploy}/answers/${selectQuiz}/${urlPathPart}` : `${location.origin}/public/jsons/answers/${selectQuiz}/${urlPathPart}`;
+-  const fetchUrlPath: string = `${import.meta.env.VITE_FETCH_URL}/jsons/answers/${selectQuiz}/${urlPathPart}`;
+```
+
+  - `src/hooks/_useFetchData.ts`（※任意）
+```diff
+try {
+  const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : selectQuizDefaultValue}/quiz.json`;
+
++  const fetchPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/${dynamicFetchPathUrl}` : `${location.origin}/public/jsons/quiz/${dynamicFetchPathUrl}`;
+-  const fetchPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/jsons/quiz/${dynamicFetchPathUrl}`;
+```
+
+</details>
 
 ## 技術構成
 - @eslint/js@9.22.0

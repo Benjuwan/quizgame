@@ -9,7 +9,7 @@ export const FirstViewer = memo(() => {
     const { selectQuiz } = useContext(SelectQuizContext);
 
     // クイズゲームの選択肢シートのフェッチ処理
-    const fetchSelectQuizPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/select-quiz.json`;
+    const fetchSelectQuizPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/jsons/select-quiz.json`;
 
     // ※ await はしない。Promise を返す記述にする。Promise が未完了ならサスペンド状態となる（Suspense の fallback が返る） 
     const fetchSelectQuizDataPromise: Promise<selectQuizType[]> = fetch(fetchSelectQuizPathUrl).then(res => res.json());
