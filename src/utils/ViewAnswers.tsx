@@ -1,8 +1,13 @@
-import { memo, use, useContext, useMemo } from "react";
-import { FetchAnswersDataContext } from "../providers/GetFetchAnswersDataContext";
+import styled from "styled-components";
+import { memo, useMemo } from "react";
 import { answerResultType, quizType, yourAnsweredType } from "../ts/typeQuiz";
 import { useViewQuizAndAnswers } from "../hooks/answers/useViewQuizAndAnswers";
-import styled from "styled-components";
+
+type viewAnswersType = {
+    getData: quizType[];
+    fetchAnswersData: answerResultType[];
+    scorePointRef: React.RefObject<number>;
+};
 
 const TheCommonContent = ({ answer, isSingleComments }: {
     answer: answerResultType,
@@ -25,11 +30,8 @@ const TheCommonContent = ({ answer, isSingleComments }: {
     );
 }
 
-export const ViewAnswers = memo(({ fetchdataPromise }: { fetchdataPromise: Promise<quizType[]> }) => {
-    // use()でPromiseの中身を取得（Promiseが未完了ならこのコンポーネントはサスペンドする）
-    const getData: quizType[] = use(fetchdataPromise);
-
-    const { fetchAnswersData, scoreChecker } = useContext(FetchAnswersDataContext);
+export const ViewAnswers = memo(({ props }: { props: viewAnswersType }) => {
+    const { getData, fetchAnswersData, scorePointRef } = props;
 
     /* useMemo はどちらも同じ依存配列（ fetchAnswersData ）なので eslint-disable-next-line react-hooks/exhaustive-deps は一度宣言するだけで良い */
     const { getViewQuizAndAnswers } = useViewQuizAndAnswers(getData);
@@ -48,9 +50,9 @@ export const ViewAnswers = memo(({ fetchdataPromise }: { fetchdataPromise: Promi
 
     return (
         <ViewAnswersElm>
-            {(typeof scoreChecker !== 'undefined' && fetchAnswersData.length > 0) ?
+            {fetchAnswersData.length > 0 ?
                 <div className="resultViewTxt">
-                    <h2>得点：{scoreChecker.score}</h2>
+                    <h2>得点：{scorePointRef.current}</h2>
                     {/* コメント（所感）が一つだけの場合 */}
                     {isSingleComments &&
                         <div className="resultViewSentence">

@@ -1,28 +1,35 @@
 import styled from "styled-components";
-import { memo, use, useContext, useEffect } from "react";
+import { memo, useContext, useEffect } from "react";
 import { QuestionCounterContext } from "../providers/QuestionCounterContext";
 import { BtnDisabledContext } from "../providers/BtnDisabledContext";
 import { quizType } from "../ts/typeQuiz";
 import { useSubscribeAnswers } from "../hooks/btns/useSubscribeAnswers";
 import { useInputAct } from "../hooks/btns/useInputAct";
-import { useGetQuizResult } from "../hooks/answers/useGetQuizResult";
 
-export const QuizBtn = memo(({ fetchdataPromise }: { fetchdataPromise: Promise<quizType[]> }) => {
-    // use()でPromiseの中身を取得（Promiseが未完了ならこのコンポーネントはサスペンドする）
-    const getData: quizType[] = use(fetchdataPromise);
+type quizBtnType = {
+    getData: quizType[];
+    scorePointRef: React.RefObject<number>;
+    withTransition_fetchAnswersDataAction: () => void;
+};
+
+export const QuizBtn = memo(({ props }: { props: quizBtnType }) => {
+    const { getData, scorePointRef, withTransition_fetchAnswersDataAction } = props;
 
     const { questionCounter } = useContext(QuestionCounterContext);
     const { isBtnDisabled, setBtnDisabled } = useContext(BtnDisabledContext);
 
     const { subscribeAnswers } = useSubscribeAnswers(getData);
     const { incrementAct, decrementAct } = useInputAct(getData.length - 1);
-    const { getQuizResult } = useGetQuizResult(getData);
 
     const increment: () => void = () => {
         const score: number | undefined = incrementAct();
-        if (typeof score !== 'undefined') {
-            getQuizResult(score);
+
+        if (typeof score === 'undefined') {
+            return;
         }
+
+        scorePointRef.current = score;
+        withTransition_fetchAnswersDataAction(); // useActionState の実行関数
     }
 
     useEffect(() => {
