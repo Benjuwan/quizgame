@@ -6,8 +6,7 @@ import { quizType } from "./ts/typeQuiz";
 import { Loading } from "./common/loading";
 import { QuizProgressBar } from "./utils/QuizProgressBar";
 import { QuizContents } from "./utils/QuizContents";
-import { QuizBtn } from "./utils/QuizBtn";
-import { ViewAnswers } from "./utils/ViewAnswers";
+import { QuizBtnViewAnswerWrapper } from "./utils/QuizBtnViewAnswerWrapper";
 
 // questionCounter（ContextAPI：グローバルステート）更新に伴う再レンダリング防止措置で memo 化処理
 export const FetchDataAndLoading = memo(() => {
@@ -28,8 +27,7 @@ export const FetchDataAndLoading = memo(() => {
                     <Suspense fallback={<Loading />}>
                         <QuizProgressBar fetchdataPromise={fetchdataPromise} />
                         <QuizContents fetchdataPromise={fetchdataPromise} />
-                        <QuizBtn fetchdataPromise={fetchdataPromise} />
-                        <ViewAnswers fetchdataPromise={fetchdataPromise} />
+                        <QuizBtnViewAnswerWrapper fetchdataPromise={fetchdataPromise} />
                     </Suspense>
                 </QuizComponent>
             }
