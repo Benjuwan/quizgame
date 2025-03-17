@@ -90,18 +90,12 @@ const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : se
 + const fetchPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/quiz/${dynamicFetchPathUrl}` : `${location.origin}/public/jsons/quiz/${dynamicFetchPathUrl}`;
 - const fetchPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/jsons/quiz/${dynamicFetchPathUrl}`;
 ```
+
   - `src/FirstViewer.tsx`
 ```diff
 // クイズゲームの選択肢シートのフェッチ処理
 + const fetchSelectQuizPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/select-quiz.json` : `${location.origin}/public/jsons/select-quiz.json`;
 - const fetchSelectQuizPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/jsons/select-quiz.json`;
-```
-  - `src/hooks/answers/useCreateAnswersData.ts`
-```diff
-const createAnswersData: (urlPathPart: string) => void = async (urlPathPart: string) => {
-try {
-+  const fetchUrlPath: string = isDeploy ? `${fetchUrlPath_forDeploy}/answers/${selectQuiz}/${urlPathPart}` : `${location.origin}/public/jsons/answers/${selectQuiz}/${urlPathPart}`;
--  const fetchUrlPath: string = `${import.meta.env.VITE_FETCH_URL}/jsons/answers/${selectQuiz}/${urlPathPart}`;
 ```
 
   - `src/hooks/_useFetchData.ts`（※任意）
