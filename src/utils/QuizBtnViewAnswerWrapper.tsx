@@ -52,6 +52,7 @@ export const QuizBtnViewAnswerWrapper = memo(({ fetchdataPromise }: { fetchdataP
                 ((questionCounter + 1) * 10) / (questionCounter + 1) :
                 (questionCounter + 1) * 10;
 
+            /* urlPathPart： フェッチする回答結果JSONファイルのパス名 */
             let urlPathPart: string = 'answer-low.json';
             if (scorePointRef.current >= highScorePoint) {
                 urlPathPart = 'answer-high.json';
@@ -92,7 +93,9 @@ export const QuizBtnViewAnswerWrapper = memo(({ fetchdataPromise }: { fetchdataP
                     {isPending ? <p>結果読み込み中</p> : <p>ゲームクリア！</p>}
                     <ViewAnswers props={{
                         getData: getData,
-                        scorePointRef: scorePointRef,
+                        scorePointRef: hasAdjustProp_absolute_100_flag ?
+                            Math.floor(scorePointRef.current / questionCounter) :
+                            scorePointRef,
                         fetchAnswersData: fetchAnswersData
                     }} />
                 </>

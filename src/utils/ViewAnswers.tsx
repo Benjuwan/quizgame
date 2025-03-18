@@ -6,7 +6,7 @@ import { useViewQuizAndAnswers } from "../hooks/answers/useViewQuizAndAnswers";
 type viewAnswersType = {
     getData: quizType[];
     fetchAnswersData: answerResultType[];
-    scorePointRef: React.RefObject<number>;
+    scorePointRef: React.RefObject<number> | number;
 };
 
 const TheCommonContent = ({ answer, isSingleComments }: {
@@ -52,7 +52,10 @@ export const ViewAnswers = memo(({ props }: { props: viewAnswersType }) => {
         <ViewAnswersElm>
             {fetchAnswersData.length > 0 ?
                 <div className="resultViewTxt">
-                    <h2>得点：{scorePointRef.current}</h2>
+                    <h2>得点：{
+                        typeof scorePointRef === 'number' ?
+                            scorePointRef : scorePointRef.current
+                    }</h2>
                     {/* コメント（所感）が一つだけの場合 */}
                     {isSingleComments &&
                         <div className="resultViewSentence">
