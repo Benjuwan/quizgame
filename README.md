@@ -57,7 +57,7 @@ VITE_FETCH_URL = "http://localhost:5173/public"
 <details>
 <summary>環境変数に対応していないホスティング先の場合の作業フローを確認</summary>
 
-- `vite.config.ts`<br>
+#### `vite.config.ts`
 `base`のコメントアウトを解除する（※サブディレクト配下（サブドメイン）へのデプロイ時のみ必要）
 ```diff
 // https://vitejs.dev/config/
@@ -67,10 +67,10 @@ export default defineConfig({
 })
 ```
 
-- `src/common/isDeploy.ts`
-  - `isDeploy`を`true`に切り替える
-  - 【任意】`selectQuizDefaultValue`の初期値（クイズゲームの初期選択肢）を必要に応じて変更する
-  - 【任意】`fetchUrlPath_forDeploy`のパス名を必要に応じて変更する
+#### `src/common/isDeploy.ts`
+- `isDeploy`を`true`に切り替える
+- 【任意】`selectQuizDefaultValue`の初期値（クイズゲームの初期選択肢）を必要に応じて変更する
+- 【任意】`fetchUrlPath_forDeploy`のパス名を必要に応じて変更する
 ```diff
 // クイズゲームの選択肢のデフォルト値
 export const selectQuizDefaultValue: string = 'animal';
@@ -82,8 +82,8 @@ export const selectQuizDefaultValue: string = 'animal';
 + export const fetchUrlPath_forDeploy: string = 'https://domain/subdomain/hoge/jsons'; // 末尾に jsons は必須
 ```
 
-- フェッチ方法の変更・調整
-  - `src/FetchDataAndLoading.tsx`
+#### フェッチ方法の変更・調整
+- `src/FetchDataAndLoading.tsx`
 ```diff
 const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : selectQuizDefaultValue}/quiz.json`;
 
@@ -91,14 +91,14 @@ const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : se
 - const fetchPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/jsons/quiz/${dynamicFetchPathUrl}`;
 ```
 
-  - `src/FirstViewer.tsx`
+- `src/FirstViewer.tsx`
 ```diff
 // クイズゲームの選択肢シートのフェッチ処理
 + const fetchSelectQuizPathUrl: string = isDeploy ? `${fetchUrlPath_forDeploy}/select-quiz.json` : `${location.origin}/public/jsons/select-quiz.json`;
 - const fetchSelectQuizPathUrl: string = `${import.meta.env.VITE_FETCH_URL}/jsons/select-quiz.json`;
 ```
 
-  - `src/hooks/_useFetchData.ts`（※任意）
+- `src/hooks/_useFetchData.ts`（※任意：当該ファイルを使用してデータフェッチする場合）
 ```diff
 try {
   const dynamicFetchPathUrl: string = `${selectQuiz.length !== 0 ? selectQuiz : selectQuizDefaultValue}/quiz.json`;
