@@ -8,7 +8,7 @@ import { useInputAct } from "../hooks/btns/useInputAct";
 
 type quizBtnType = {
     getData: quizType[];
-    scorePointRef: React.RefObject<number>;
+    scorePointRef: React.RefObject<number>; // このコンポーネントで得点数を取得している
     withTransition_fetchAnswersDataAction: () => void;
 };
 
