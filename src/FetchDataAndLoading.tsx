@@ -40,4 +40,9 @@ const QuizComponent = styled.section`
     font-size: 16px;
     line-height: 2;
 }
+
+& .isPending{
+    text-align: center;
+    margin-bottom: .5em;
+}
 `;
