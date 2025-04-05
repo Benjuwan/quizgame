@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { memo, useMemo } from "react";
 import { answerResultType, quizType, yourAnsweredType } from "../ts/typeQuiz";
 import { useViewQuizAndAnswers } from "../hooks/answers/useViewQuizAndAnswers";
@@ -15,13 +14,13 @@ const TheCommonContent = ({ answer, isSingleComments }: {
 }) => {
     return (
         <>
-            <h2>{answer.title}</h2>
+            <h2 className="text-center text-[clamp(24px,calc(100vw/24),32px)] font-normal mb-4 md:text-[18px]">{answer.title}</h2>
             {answer.img &&
-                <div className="thumbnails">
-                    <img src={answer.img} alt={`「${answer.title}」の参照画像`} />
+                <div className="h-[clamp(460px,calc(100vw/2),640px)] mb-8 md:h-[clamp(160px,calc(100vw/5),280px)] md:mb-[20px]">
+                    <img className="object-contain w-full h-full" src={answer.img} alt={`「${answer.title}」の参照画像`} />
                 </div>
             }
-            <p>{answer.txt}</p>
+            <p className="wrap-anywhere">{answer.txt}</p>
             {/* コメント（所感）が複数ある場合 */}
             {isSingleComments ||
                 <>{answer.comment && <p>{answer.comment}</p>}</>
@@ -49,287 +48,78 @@ export const ViewAnswers = memo(({ props }: { props: viewAnswersType }) => {
     const resetBtn: () => void = () => location.reload();
 
     return (
-        <ViewAnswersElm>
-            {fetchAnswersData.length > 0 ?
-                <div className="resultViewTxt">
-                    <h2>得点：{
-                        typeof scorePointRef === 'number' ?
-                            scorePointRef : scorePointRef.current
-                    }</h2>
+        <div className="results-container">
+            {fetchAnswersData.length > 0 ? (
+                <div className="w-[clamp(280px,100%,640px)] mx-auto py-10 px-4 bg-[#dadada] rounded">
+                    <h2 className="text-center text-[clamp(24px,calc(100vw/24),32px)] font-normal mb-4 md:text-[18px]">
+                        得点：{typeof scorePointRef === 'number' ? scorePointRef : scorePointRef.current}
+                    </h2>
+
                     {/* コメント（所感）が一つだけの場合 */}
-                    {isSingleComments &&
-                        <div className="resultViewSentence">
-                            {fetchAnswersData[0].comment && <p>{fetchAnswersData[0].comment}</p>}
+                    {isSingleComments && (
+                        <div className="mb-8">
+                            {fetchAnswersData[0].comment && <p className="text-[1rem] leading-7 mb-8">{fetchAnswersData[0].comment}</p>}
                         </div>
-                    }
-                    {typeof viewQuizAndAnswers !== 'undefined' && viewQuizAndAnswers.length > 0 &&
-                        <details className="viewQuizAndAnswers">
-                            <summary>自分の回答を確認する</summary>
-                            <ul className="viewQuizAndAnswersChild">
+                    )}
+
+                    {typeof viewQuizAndAnswers !== 'undefined' && viewQuizAndAnswers.length > 0 && (
+                        <details className="my-10 text-sm md:text-sm">
+                            <summary className="bg-[#333] text-white border border-transparent leading-8 w-fit px-4 tracking-wider cursor-pointer hover:bg-white hover:text-[#333] hover:transition-all hover:duration-250">
+                                自分の回答を確認する
+                            </summary>
+                            <ul className="text-[1rem] p-4 shadow-inner shadow-black/45 rounded list-none md:text-[1rem]">
                                 {viewQuizAndAnswers.map(viewQuizAndAnswer => (
-                                    <li key={viewQuizAndAnswer.questionNumber}>
-                                        <p>
-                                            <span>
+                                    <li key={viewQuizAndAnswer.questionNumber} className="leading-6 last:border-b-0 last:mb-0 last:pb-0 border-b border-[#333] mb-4 pb-4">
+                                        <p className="pl-4">
+                                            <span className="block indent-[-1em] font-bold">
                                                 質問 {viewQuizAndAnswer.questionNumber}
-                                                {viewQuizAndAnswer.score.length > 0 &&
-                                                    <> ／ 得点 {viewQuizAndAnswer.score}</>
-                                                }
+                                                {viewQuizAndAnswer.score.length > 0 && <> ／ 得点 {viewQuizAndAnswer.score}</>}
                                             </span>
                                             {viewQuizAndAnswer.question}
                                         </p>
-                                        <p><span className="answered">回答：</span>{viewQuizAndAnswer.answered}</p>
-                                        <p><span className="correctAnswer">正答：</span>{viewQuizAndAnswer.correctAnswer}</p>
+                                        <p className="pl-4">
+                                            <span className="block indent-[-1em] font-bold text-[#196cca]">回答：</span>
+                                            {viewQuizAndAnswer.answered}
+                                        </p>
+                                        <p className="pl-4">
+                                            <span className="block indent-[-1em] font-bold text-[#158815]">正答：</span>
+                                            {viewQuizAndAnswer.correctAnswer}
+                                        </p>
                                     </li>
                                 ))}
                             </ul>
                         </details>
-                    }
-                    <div id="resultChild" className="addFlex">
+                    )}
+
+                    <div id="resultChild" className="mb-[2.5em] md:max-w-[640px] lg:max-w-[1080px] mx-auto md:flex md:justify-center md:items-start md:gap-8 lg:justify-start">
                         {fetchAnswersData.map((answer, i) => (
-                            <div className="resEls" key={i}>
-                                {answer.url ?
-                                    <a href={answer.url} target="_blank">
+                            <div className="resEls text-sm text-[#333] leading-7 rounded shadow-inner shadow-black/45 mb-20 p-6 md:text-[1rem] md:w-full md:last:mb-0 lg:mb-20" key={i}>
+                                {answer.url ? (
+                                    <a href={answer.url} target="_blank" className="block no-underline text-[#333]">
                                         <TheCommonContent
                                             answer={answer}
                                             isSingleComments={isSingleComments}
                                         />
-                                    </a> :
+                                    </a>
+                                ) : (
                                     <TheCommonContent
                                         answer={answer}
                                         isSingleComments={isSingleComments}
                                     />
-                                }
+                                )}
                             </div>
                         ))}
                     </div>
-                    <button id="resetBtn" type="button" onClick={resetBtn}>最初からやり直す</button>
+                    <button
+                        id="resetBtn"
+                        type="button"
+                        onClick={resetBtn}
+                        className="appearance-none border-none outline-none cursor-pointer block w-[clamp(80px,calc(100vw/2),320px)] mx-auto mb-10 leading-11 bg-[#333] border border-transparent text-white tracking-wider hover:transition-all hover:duration-[.5s] hover:border-[#333] hover:text-[#333] hover:bg-white"
+                    >
+                        最初からやり直す
+                    </button>
                 </div>
-                : null
-            }
-        </ViewAnswersElm>
+            ) : null}
+        </div>
     );
 });
-
-const ViewAnswersElm = styled.div`
-    .resultViewTxt{
-        width: clamp(280px, 100%, 640px);
-        margin: 0 auto;
-        padding: 2.5em 1em;
-        background-color: #dadada;
-        border-radius: 4px;
-
-        & h2{
-            text-align: center;
-            font-size: clamp(24px, calc(100vw/24), 32px);
-            font-weight: normal;
-            margin-bottom: 1em;
-        }
-        
-        .viewQuizAndAnswers {
-            margin: 2.5em auto;
-            font-size: 1.4rem;
-
-            & summary{
-                background-color: #333;
-                color: #fff;
-                border: 1px solid transparent;
-                line-height: 2;
-                width: fit-content;
-                padding: 0 1em;
-                letter-spacing: 0.25em;
-                cursor: pointer;
-
-                &:hover{
-                    transition: all .25s;
-                    background-color: #fff;
-                    color: #333;
-                }
-            }
-            
-            & .viewQuizAndAnswersChild{
-                font-size: 1.6rem;
-                padding: 1em;
-                box-shadow: 0 0 8px rgba(0,0,0,.45) inset;
-                border-radius: 4px;
-                list-style: none;
-
-                & li{
-                    line-height: 1.5;
-
-                    & p {
-                        padding-left: 1em;
-
-                        & span {
-                            display: block;
-                            text-indent: -1em;
-                            font-weight: bold;
-
-                            &.answered{
-                                color: #196cca;
-                            }
-                            
-                            &.correctAnswer{
-                                color: #158815;
-                            }
-                        }
-                    }
-
-                    &:not(:last-of-type){
-                        border-bottom: 1px solid #333;
-                        margin-bottom: 1em;
-                        padding-bottom: 1em;
-                    }
-                }
-            }
-        }
-
-        .resEls{
-            font-size: 1.4rem;
-            color: #333;
-            line-height: 1.8;
-            border-radius: 4px;
-            box-shadow: 0 0 16px rgba(0,0,0,.45) inset;
-            margin-bottom: 80px;
-            padding: 1.5em;
-            
-            & h2{
-                text-align: left;
-                font-size: 1.8rem;
-                border-left: 8px solid;
-                padding-left: .5em;
-                margin-bottom: 2em;
-                line-height: 1.5;
-            }
-            
-            & p{
-                overflow-wrap: anywhere;
-            }
-
-            & .thumbnails{
-                height: clamp(460px, calc(100vw/2), 640px);
-                margin-bottom: 2em;
-                
-                & img{
-                    object-fit: contain;
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-            
-            & a{
-                display: block;
-                text-decoration: none;
-                color: #333;
-            }
-
-            &:not(.noImgAnker, .noAnker):hover {
-                transition: all .5s;
-                box-shadow: 0 0 16px rgba(0,0,0,.45);
-            }
-
-            &.noImgAnker,
-            &.noAnker {
-                padding: 1.5em;
-            }
-        }
-
-        & #resetBtn{
-            appearance: none;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            display: block;
-            width: clamp(80px, calc(100vw/2),320px);
-            margin: 0 auto 40px;
-            line-height: 44px;
-            background-color: #333;
-            border: 1px solid transparent;
-            color: #fff;
-            letter-spacing: .25em;
-
-            &:hover{
-                transition: all .5s;
-                border-color: #333;
-                color: #333;
-                background-color: #fff;
-            }
-        }
-
-        & .resultViewSentence{
-            & p{
-                font-size: 16px;
-                line-height: 1.8;
-                margin-bottom: 2em;
-            }
-        }
-    }
-
-@media screen and (min-width: 700px) {
-    #resultChild{
-        max-width: 640px;
-        margin: auto;
-
-        &.addFlex{
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 2em;
-
-            & .resEls{
-                width: 100%;
-                &:not(:last-of-type){
-                    margin-bottom: 2%;
-                }
-            }
-        }
-
-        & .resEls{
-            font-size: 16px;
-
-            & h2{
-                font-size: 18px;
-            }
-
-            & .thumbnails{
-                height: clamp(160px, calc(100vw/5), 280px);
-                margin-bottom: 20px;
-            }
-        }
-    }
-
-    .resultViewTxt{
-        & h2{
-            font-size: 32px;
-        }
-
-        & .viewQuizAndAnswers {
-            font-size: 14px;
-
-            & .viewQuizAndAnswersChild {
-                font-size: 16px;
-            }
-        }
-    }  
-}
-
-@media screen and (min-width: 1025px){
-    #resultChild{
-        max-width: 1080px;
-
-        &.addFlex{
-            justify-content: flex-start;
-
-            & .resEls{
-                &:not(:last-of-type){
-                    margin-bottom: 80px;
-                }
-            }
-        }
-    }
-
-    .resultViewTxt{
-        width: clamp(280px,100%,1080px);
-        padding: 2.5em;
-    }
-}
-`;

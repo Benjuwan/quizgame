@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { memo, useContext, useEffect } from "react";
 import { QuestionCounterContext } from "../providers/QuestionCounterContext";
 import { BtnDisabledContext } from "../providers/BtnDisabledContext";
@@ -47,11 +46,11 @@ export const QuizBtn = memo(({ props }: { props: quizBtnType }) => {
     return (
         <>
             {questionCounter < getData.length &&
-                <ContentControler className="contentControler">
-                    <ol>
-                        <li><button id="backBtn" type="button" onClick={decrementAct} disabled={questionCounter === 0}>戻る</button></li>
-                        <li>
-                            <button id="nextBtn" type="button" onClick={increment} disabled={isBtnDisabled}>
+                <div className="max-w-[800px] m-auto">
+                    <ol className="grid grid-cols-[repeat(2,1fr)] p-0">
+                        <li className="justify-self-start"><button id="backBtn" className="appearance-none px-[2.5em] leading-[2.75rem] rounded text-[#333] bg-[gold] text-black border-transparent md:leading-[44px] disabled:bg-[#dadada] text-[#a0a0a0] not-disabled:hover:cursor-pointer not-disabled:hover:transition not-disabled:hover:bg-[#fff4b6]" type="button" onClick={decrementAct} disabled={questionCounter === 0}>戻る</button></li>
+                        <li className="justify-self-end">
+                            <button id="nextBtn" className="appearance-none px-[2.5em] leading-[2.75rem] rounded text-[#333] bg-[gold] text-black border-transparent md:leading-[44px] disabled:bg-[#dadada] text-[#a0a0a0] not-disabled:hover:cursor-pointer not-disabled:hover:transition not-disabled:hover:bg-[#fff4b6]" type="button" onClick={increment} disabled={isBtnDisabled}>
                                 {questionCounter === getData.length - 1 ?
                                     '結果発表！' :
                                     <>
@@ -63,49 +62,8 @@ export const QuizBtn = memo(({ props }: { props: quizBtnType }) => {
                             </button>
                         </li>
                     </ol>
-                </ContentControler>
+                </div>
             }
         </>
     );
 });
-
-const ContentControler = styled.div`
-    max-width: 800px;
-    margin: auto;
-        
-        & ol{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            list-style: none;
-            padding: 0;
-
-            & li{
-                justify-self: start;
-                &:last-of-type{
-                    justify-self: end;
-                }
-                
-                & button{
-                    appearance: none;
-                    outline: none;
-                    padding: 0 2.5em;
-                    line-height: 44px;
-                    border-radius: 4px;
-                    color: #333;
-                    background-color: gold;
-                    border-color: transparent;
-                    
-                    &[disabled]{
-                        background-color: #dadada;
-                        color: #a0a0a0;
-                    }
-                    
-                    &:not([disabled]):hover{
-                        cursor: pointer;
-                        transition: all .25s;
-                        background-color: #fff4b6;
-                    }
-                }
-            }
-        }
-`;
