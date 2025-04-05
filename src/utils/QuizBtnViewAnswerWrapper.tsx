@@ -90,7 +90,7 @@ export const QuizBtnViewAnswerWrapper = memo(({ fetchdataPromise }: { fetchdataP
                     withTransition_fetchAnswersDataAction: withTransition_fetchAnswersDataAction
                 }} /> :
                 <>
-                    {isPending ? <p className="isPending">結果読み込み中</p> : <p className="isPending">ゲームクリア！</p>}
+                    {isPending ? <p className="text-center mb-[0.5em]">結果読み込み中</p> : <p className="text-center mb-[0.5em]">ゲームクリア！</p>}
                     <ViewAnswers props={{
                         getData: getData,
                         scorePointRef: hasAdjustProp_absolute_100_flag ?

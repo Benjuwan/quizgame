@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { memo, use, useContext } from "react";
 import { quizType } from "../ts/typeQuiz";
 import { QuestionCounterContext } from "../providers/QuestionCounterContext";
@@ -13,43 +12,19 @@ export const QuizProgressBar = memo(({ fetchdataPromise }: { fetchdataPromise: P
         <>
             {questionCounter < getData.length &&
                 /* 設問数分の進行バー・ポイントを生成 */
-                <ProgressBar id="progressBar">
-                    <ul>
+                <div id="progressBar" className="w-[clamp(5rem,calc(100vw/2),50rem)] mx-auto mb-[1.25rem] md:w-[clamp(80px,calc(100vw/2),800px)] md:mb-[20px]">
+                    <ul className="flex justify-center gap-[2%]">
                         {getData.map((_, i) => (
                             <li key={i}
-                                className={i <= questionCounter ? 'cleared' : ''}
+                                className={`rounded-[1.875rem] w-[4rem] h-[0.75rem] bg-[#dadada] md:rounded-[30px] md:w-[64px] md:h-[12px] ${(
+                                    i <= questionCounter ||
+                                    i === 0
+                                ) ? 'bg-[gold]' : ''}`}
                             >&nbsp;</li>
                         ))}
                     </ul>
-                </ProgressBar>
+                </div>
             }
         </>
     );
 });
-
-const ProgressBar = styled.div`
-width: clamp(80px, calc(100vw/2), 800px);
-margin: 0 auto 20px;
-
-& ul{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2%;
-
-    & li{
-        border-radius: 30px;
-        width: 64px;
-        height: 12px;
-        background-color: #dadada;
-
-        &:first-of-type{
-            background-color: gold;
-        }
-
-        &.cleared{
-            background-color: gold;
-        }
-    }
-}
-`;

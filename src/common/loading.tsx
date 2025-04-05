@@ -1,19 +1,7 @@
-import styled from "styled-components";
-
 export const Loading = () => {
     return (
-        <LoadingElm>
-            <p>Data Loading...</p>
-        </LoadingElm>
+        <div className="grid place-content-center h-[calc(100vh/2)]">
+            <p className="text-center">Data Loading...</p>
+        </div>
     );
 }
-
-const LoadingElm = styled.div`
-    display: grid;
-    place-content: center;
-    height: calc(100vh/2);
-
-    & p {
-        text-align: center;
-    }
-`

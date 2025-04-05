@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { memo, Suspense, useContext } from "react";
 import { selectQuizDefaultValue } from "./common/isDeploy";
 import { SelectQuizContext } from "./providers/SelectQuizContext";
@@ -22,27 +21,15 @@ export const FetchDataAndLoading = memo(() => {
     return (
         <>
             {selectQuiz.length > 0 &&
-                <QuizComponent>
+                <section className="text-[1rem] leading-[2]">
                     {/* Suspense 必須 */}
                     <Suspense fallback={<Loading />}>
                         <QuizProgressBar fetchdataPromise={fetchdataPromise} />
                         <QuizContents fetchdataPromise={fetchdataPromise} />
                         <QuizBtnViewAnswerWrapper fetchdataPromise={fetchdataPromise} />
                     </Suspense>
-                </QuizComponent>
+                </section>
             }
         </>
     );
 });
-
-const QuizComponent = styled.section`
-& .contentsWrapper{
-    font-size: 16px;
-    line-height: 2;
-}
-
-& .isPending{
-    text-align: center;
-    margin-bottom: .5em;
-}
-`;
