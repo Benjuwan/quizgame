@@ -7,7 +7,7 @@ export const Footer = memo(() => {
     }, []);
 
     return (
-        <footer className="text-[0.75rem] text-center leading-[2] md:mt-[clamp(160px,calc(100vw/5),320px)]">
+        <footer className="text-xs text-center leading-[2] md:mt-[clamp(160px,calc(100vw/5),320px)]">
             <p><small>Copyright &copy; {currYear} <a href="https://github.com/Benjuwan/quizgame" target="_blank">QuizGame by benjuwan</a></small></p>
         </footer>
     );

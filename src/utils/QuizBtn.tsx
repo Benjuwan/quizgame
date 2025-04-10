@@ -48,9 +48,9 @@ export const QuizBtn = memo(({ props }: { props: quizBtnType }) => {
             {questionCounter < getData.length &&
                 <div className="max-w-[800px] m-auto">
                     <ol className="grid grid-cols-[repeat(2,1fr)] p-0">
-                        <li className="justify-self-start"><button id="backBtn" className="appearance-none px-[2.5em] leading-[2.75rem] rounded text-[#333] bg-[gold] text-black border-transparent md:leading-[44px] disabled:bg-[#dadada] text-[#a0a0a0] not-disabled:hover:cursor-pointer not-disabled:hover:transition not-disabled:hover:bg-[#fff4b6]" type="button" onClick={decrementAct} disabled={questionCounter === 0}>戻る</button></li>
+                        <li className="justify-self-start"><button id="backBtn" className="appearance-none px-[2.5em] leading-[2.75rem] rounded text-[#333] bg-[gold] text-black border-transparent disabled:bg-[#dadada] text-[#a0a0a0] not-disabled:hover:cursor-pointer not-disabled:hover:transition not-disabled:hover:bg-[#fff4b6]" type="button" onClick={decrementAct} disabled={questionCounter === 0}>戻る</button></li>
                         <li className="justify-self-end">
-                            <button id="nextBtn" className="appearance-none px-[2.5em] leading-[2.75rem] rounded text-[#333] bg-[gold] text-black border-transparent md:leading-[44px] disabled:bg-[#dadada] text-[#a0a0a0] not-disabled:hover:cursor-pointer not-disabled:hover:transition not-disabled:hover:bg-[#fff4b6]" type="button" onClick={increment} disabled={isBtnDisabled}>
+                            <button id="nextBtn" className="appearance-none px-[2.5em] leading-[2.75rem] rounded text-[#333] bg-[gold] text-black border-transparent disabled:bg-[#dadada] text-[#a0a0a0] not-disabled:hover:cursor-pointer not-disabled:hover:transition not-disabled:hover:bg-[#fff4b6]" type="button" onClick={increment} disabled={isBtnDisabled}>
                                 {questionCounter === getData.length - 1 ?
                                     '結果発表！' :
                                     <>

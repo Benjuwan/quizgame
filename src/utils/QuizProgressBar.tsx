@@ -12,11 +12,11 @@ export const QuizProgressBar = memo(({ fetchdataPromise }: { fetchdataPromise: P
         <>
             {questionCounter < getData.length &&
                 /* 設問数分の進行バー・ポイントを生成 */
-                <div id="progressBar" className="w-[clamp(5rem,calc(100vw/2),50rem)] mx-auto mb-[1.25rem] md:w-[clamp(80px,calc(100vw/2),800px)] md:mb-[20px]">
+                <div id="progressBar" className="w-[clamp(5rem,calc(100vw/2),50rem)] mx-auto mb-[1.25rem] md:w-[clamp(80px,calc(100vw/2),800px)]">
                     <ul className="flex justify-center gap-[2%]">
                         {getData.map((_, i) => (
                             <li key={i}
-                                className={`rounded-[1.875rem] w-[4rem] h-[0.75rem] bg-[#dadada] md:rounded-[30px] md:w-[64px] md:h-[12px] ${(
+                                className={`rounded-[1.875rem] w-[4rem] h-[0.75rem] bg-[#dadada] ${(
                                     i <= questionCounter ||
                                     i === 0
                                 ) ? 'bg-[gold]' : ''}`}
