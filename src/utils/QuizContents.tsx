@@ -35,7 +35,7 @@ export const QuizContents = memo(({ fetchdataPromise }: { fetchdataPromise: Prom
 
                                 <ul className="list-none rounded md:pt-2 md:grid md:grid-cols-[repeat(3,1fr)] md:place-items-center md:gap-8">
                                     {Object.entries(quizData.choices).map(choice => (
-                                        <li key={choice[0]} className="labelItem leading-[1.75] mb-4 md:mb-0 last:mb-0">
+                                        <li key={choice[0]} className="labelItem leading-[1.75] mb-4 md:mb-0">
                                             <label
                                                 htmlFor={choice[0]}
                                                 onClick={(e: SyntheticEvent<HTMLLabelElement>) =>

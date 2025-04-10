@@ -63,11 +63,11 @@ export const ViewAnswers = memo(({ props }: { props: viewAnswersType }) => {
                     )}
 
                     {typeof viewQuizAndAnswers !== 'undefined' && viewQuizAndAnswers.length > 0 && (
-                        <details className="my-10 text-sm md:text-sm">
+                        <details className="my-10 text-sm">
                             <summary className="bg-[#333] text-white border border-transparent leading-8 w-fit px-4 tracking-wider cursor-pointer hover:bg-white hover:text-[#333] hover:transition-all hover:duration-250">
                                 自分の回答を確認する
                             </summary>
-                            <ul className="text-[1rem] p-4 shadow-inner shadow-black/45 rounded list-none md:text-[1rem]">
+                            <ul className="text-[1rem] p-4 shadow-inner shadow-black/45 rounded list-none">
                                 {viewQuizAndAnswers.map(viewQuizAndAnswer => (
                                     <li key={viewQuizAndAnswer.questionNumber} className="leading-6 last:border-b-0 last:mb-0 last:pb-0 border-b border-[#333] mb-4 pb-4">
                                         <p className="pl-4">
@@ -93,7 +93,7 @@ export const ViewAnswers = memo(({ props }: { props: viewAnswersType }) => {
 
                     <div id="resultChild" className="mb-[2.5em] md:max-w-[640px] lg:max-w-[1080px] mx-auto md:flex md:justify-center md:items-start md:gap-8 lg:justify-start">
                         {fetchAnswersData.map((answer, i) => (
-                            <div className="resEls text-sm text-[#333] leading-7 rounded shadow-inner shadow-black/45 mb-20 p-6 md:text-[1rem] md:w-full md:last:mb-0 lg:mb-20" key={i}>
+                            <div className="resEls text-sm text-[#333] leading-7 rounded shadow-inner shadow-black/45 mb-20 p-6 md:text-[1rem] md:w-full md:last-of-type:mb-0" key={i}>
                                 {answer.url ? (
                                     <a href={answer.url} target="_blank" className="block no-underline text-[#333]">
                                         <TheCommonContent
