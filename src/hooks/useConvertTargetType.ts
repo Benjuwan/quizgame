@@ -14,7 +14,6 @@ export const useConvertTargetType = () => {
 
         /* type in quizCollectAnswerScores： quizCollectAnswerScores（オブジェクト）の中に type の文字列が一致するキー・プロパティ名があるかをチェック */
         if (type !== null && type in quizCollectAnswerScores) {
-
             /* type in quizCollectAnswerScores を通じて「既に存在が保証されている型」を type に指定（型アサーション： 型推論の上書き）*/
             const targetKey = type as keyof quizChoicesType;
             return targetKey;
