@@ -50,6 +50,7 @@ export const useViewQuizAndAnswers = (getData: quizType[]) => {
                 return {
                     questionNumber: choice[1].questionNumber,
                     question: choice[1].quiz,
+                    choices: choice[1].choices,
                     answered: choice[1].choices[targetPositon].txt,
                     correctAnswer: correctAnswers[i],
                     score: choice[1].choices[targetPositon].point

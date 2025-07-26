@@ -47,6 +47,7 @@ export type resultType = {
 export type yourAnsweredType = {
     questionNumber: number;
     question: string;
+    choices: quizChoicesType;
     answered: string;
     correctAnswer: string;
     score: string;

@@ -19,7 +19,7 @@ export const FetchDataAndLoading = memo(() => {
      * ※ await はしない。Promise を返す記述にする。Promise が未完了ならサスペンド状態となる
      * （Suspense の fallback が返る） 
      * ※ async / await を使った実装もできるが、その場合は非同期関数の実行という工程を挟むことになるため冗長なコードになる
-     * （関数の処理結果を変数に格納して `use`API に渡す、または `use(asyncFunc())` というように関数自体を渡す必要が出てくるため）
+     * （関数の処理結果を変数に格納して `use`API に渡す、または `use(asyncFunc())` というように関数（`asyncFunc()`）自体を渡す必要が出てくるため）
     */
     const fetchdataPromise: Promise<quizType[]> = fetch(fetchPathUrl).then(res => res.json());
 
