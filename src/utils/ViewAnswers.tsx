@@ -39,6 +39,12 @@ export const ViewAnswers = memo(({ props }: { props: viewAnswersType }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fetchAnswersData]);
 
+    // 正解数
+    const correctAnswerCount: number | undefined = useMemo(() => {
+        return viewQuizAndAnswers?.filter(answer => answer.score.length > 0 && answer.score === '100').length;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     /* 各回答データに属するコメント（所感）数によるフラグ */
     const isSingleComments: boolean = useMemo(() => {
         const withCommentData: answerResultType[] = [...fetchAnswersData].filter(d => d.comment);
@@ -67,23 +73,35 @@ export const ViewAnswers = memo(({ props }: { props: viewAnswersType }) => {
                             <summary className="bg-[#333] text-white border border-transparent leading-8 w-fit px-4 tracking-wider cursor-pointer hover:bg-white hover:text-[#333] hover:transition-all hover:duration-250">
                                 自分の回答を確認する
                             </summary>
+
+                            {typeof correctAnswerCount !== 'undefined' &&
+                                <p className="leading-[2] text-base text-[#333] my-[.5em]">正解数：<span className="text-[#1a9b5f]">{correctAnswerCount}</span> / {getData.length}</p>
+                            }
+
                             <ul className="text-[1rem] p-4 shadow-inner shadow-black/45 rounded list-none">
                                 {viewQuizAndAnswers.map(viewQuizAndAnswer => (
                                     <li key={viewQuizAndAnswer.questionNumber} className="leading-6 last:border-b-0 last:mb-0 last:pb-0 border-b border-[#333] mb-4 pb-4">
+                                        <div className="pl-4 mb-[1em]">
+                                            <p className="flex gap-[1em] items-center mb-[.5em]">
+                                                <span className="block indent-[-1em] font-bold">質問 {viewQuizAndAnswer.questionNumber}
+                                                    {viewQuizAndAnswer.score.length > 0 && <> ／ 得点 {viewQuizAndAnswer.score}</>}
+                                                </span>
+                                                {viewQuizAndAnswer.score.length > 0 && viewQuizAndAnswer.score === '100' && <span className="bg-[#1a9b5f] text-white p-[.25em] rounded text-sm">正解！</span>}
+                                            </p>
+                                            <p>{viewQuizAndAnswer.question}</p>
+                                        </div>
                                         <p className="pl-4">
-                                            <span className="block indent-[-1em] font-bold">
-                                                質問 {viewQuizAndAnswer.questionNumber}
-                                                {viewQuizAndAnswer.score.length > 0 && <> ／ 得点 {viewQuizAndAnswer.score}</>}
-                                            </span>
-                                            {viewQuizAndAnswer.question}
-                                        </p>
-                                        <p className="pl-4">
-                                            <span className="block indent-[-1em] font-bold text-[#196cca]">回答：</span>
-                                            {viewQuizAndAnswer.answered}
-                                        </p>
-                                        <p className="pl-4">
-                                            <span className="block indent-[-1em] font-bold text-[#158815]">正答：</span>
-                                            {viewQuizAndAnswer.correctAnswer}
+                                            {Object.entries(viewQuizAndAnswer.choices).map((choice, i) => (
+                                                <span key={i}
+                                                    className={`block indent-[-1em] ${choice[1].txt === viewQuizAndAnswer.correctAnswer ?
+                                                        'text-[#1a9b5f] font-bold' :
+                                                        `${choice[1].txt === viewQuizAndAnswer.answered ?
+                                                            'text-[#dd1313]' :
+                                                            'text-[#333]'
+                                                        }`}`
+                                                    }
+                                                >{i + 1}. {choice[1].txt}</span>
+                                            ))}
                                         </p>
                                     </li>
                                 ))}
