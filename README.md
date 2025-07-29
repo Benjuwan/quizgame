@@ -119,8 +119,8 @@ try {
 - eslint-plugin-react-refresh@0.4.20
 - eslint@9.32.0
 - globals@15.15.0
-- react-dom@19.1.0
-- react@19.1.0
+- react-dom@19.1.1
+- react@19.1.1
 - tailwindcss@4.1.11
 - typescript-eslint@8.38.0
 - typescript@5.7.3
