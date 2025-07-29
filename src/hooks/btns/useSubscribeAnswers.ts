@@ -1,11 +1,30 @@
 import { useContext, useMemo } from "react";
-import { quizChoicesType, quizCollectAnswerScoresType, quizType } from "../../ts/typeQuiz";
+import { quizCollectAnswerScoresType, quizType } from "../../ts/typeQuiz";
 import { QuizCollectAnswerScoresContext } from "../../providers/QuizCollectAnswerScoresContext";
 
 export const useSubscribeAnswers = (getQuizData: quizType[]) => {
     const { setQuizCollectAnswerScores } = useContext(QuizCollectAnswerScoresContext);
 
-    const quizDataChoices: quizChoicesType[] = useMemo(() => getQuizData.map(quizData => quizData.choices), [getQuizData]);
+    /* 読み込んだクイズデータ内において最も多くの回答選択肢数（クイズ別の設問数）を取得 */
+    const maxChoices = useMemo(() => Math.max(...getQuizData.map(quiz => Object.keys(quiz.choices).length)), [getQuizData]);
+
+    /* quizCollectAnswerScoresType の key（プロパティ名）の生成準備 */
+    const choiceLabel: Set<string> = useMemo(() => {
+        const quizChoices: string[] = [...getQuizData]
+            .map((quiz) => {
+                // 最も多くの回答選択肢数を持った設問ラベル（例：'one' | 'two' | 'three'）を取得
+                if (Object.keys(quiz.choices).length === maxChoices) {
+                    return Object.keys(quiz.choices);
+                }
+            })
+            .filter((quizChoice): quizChoice is string[] => typeof quizChoice !== 'undefined')
+            .flat();
+
+        // 重複排除した、最多設問数に準じた設問ラベル（例：'one' | 'two' | 'three'）を返す
+        return new Set(quizChoices);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [getQuizData]);
 
     const subscribeAnswers: () => void = () => {
         /**
@@ -18,17 +37,9 @@ export const useSubscribeAnswers = (getQuizData: quizType[]) => {
         /* 設問数（getQuizData.length）に応じた空要素('')を用意 */
         const scoreEntriesAry: string[] = new Array(getQuizData.length).fill('');
 
-        /* quizCollectAnswerScoresType の key（プロパティ名）の生成準備 */
-        const choiceLabel: string[][] = Object.values(quizDataChoices).map((eachQuizChoice, i) => {
-            if (i === 0) {
-                /* 設問項目名（例：'one' | 'two' | 'three'）を抽出 */
-                return Object.keys(eachQuizChoice);
-            }
-        }).filter((eachQuizChoice): eachQuizChoice is string[] => typeof eachQuizChoice !== 'undefined');
-
         /* quizCollectAnswerScores の生成 */
-        /* 2次元配列（string[][]）を1次元配列（string[]）に変換して処理を進める */
-        const theChoices: quizCollectAnswerScoresType[] = choiceLabel.flat().map(label => {
+        /* 集合（Set<string>）を1次元配列（string[]）に変換して処理を進める */
+        const theChoices: quizCollectAnswerScoresType[] = Array.from(choiceLabel).flat().map(label => {
             return {
                 /* key（プロパティ名）は（オブジェクトの）ブラケット記法で動的に命名 */
                 [label]: scoreEntriesAry
