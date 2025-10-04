@@ -110,18 +110,18 @@ try {
 </details>
 
 ## 技術構成
-- @eslint/js@9.35.0
-- @tailwindcss/vite@4.1.13
-- @types/react-dom@19.1.9
-- @types/react@19.1.13
+- @eslint/js@9.37.0
+- @tailwindcss/vite@4.1.14
+- @types/react-dom@19.2.0
+- @types/react@19.2.0
 - @vitejs/plugin-react@4.7.0
 - eslint-plugin-react-hooks@5.2.0
-- eslint-plugin-react-refresh@0.4.20
-- eslint@9.35.0
+- eslint-plugin-react-refresh@0.4.23
+- eslint@9.37.0
 - globals@15.15.0
-- react-dom@19.1.1
-- react@19.1.1
-- tailwindcss@4.1.13
-- typescript-eslint@8.44.0
+- react-dom@19.2.0
+- react@19.2.0
+- tailwindcss@4.1.14
+- typescript-eslint@8.45.0
 - typescript@5.7.3
 - vite@6.3.6
