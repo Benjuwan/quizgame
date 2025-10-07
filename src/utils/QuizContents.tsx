@@ -1,12 +1,9 @@
-import { memo, SyntheticEvent, use, useContext } from "react";
+import { memo, SyntheticEvent, useContext } from "react";
 import { quizType } from "../ts/typeQuiz";
 import { QuestionCounterContext } from "../providers/QuestionCounterContext";
 import { useChangeCorrectChoice } from "../hooks/useChangeCorrectChoice";
 
-export const QuizContents = memo(({ fetchdataPromise }: { fetchdataPromise: Promise<quizType[]> }) => {
-    // use()でPromiseの中身を取得（Promiseが未完了ならこのコンポーネントはサスペンドする）
-    const getData: quizType[] = use(fetchdataPromise);
-
+export const QuizContents = memo(({ getData }: { getData: quizType[] }) => {
     const { questionCounter } = useContext(QuestionCounterContext);
 
     const { checkedEitherOf, changeCorrectChoice } = useChangeCorrectChoice();

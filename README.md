@@ -112,8 +112,8 @@ try {
 ## 技術構成
 - @eslint/js@9.37.0
 - @tailwindcss/vite@4.1.14
-- @types/react-dom@19.2.0
-- @types/react@19.2.0
+- @types/react-dom@19.2.1
+- @types/react@19.2.2
 - @vitejs/plugin-react@4.7.0
 - eslint-plugin-react-hooks@5.2.0
 - eslint-plugin-react-refresh@0.4.23
@@ -122,6 +122,6 @@ try {
 - react-dom@19.2.0
 - react@19.2.0
 - tailwindcss@4.1.14
-- typescript-eslint@8.45.0
+- typescript-eslint@8.46.0
 - typescript@5.7.3
 - vite@6.3.6

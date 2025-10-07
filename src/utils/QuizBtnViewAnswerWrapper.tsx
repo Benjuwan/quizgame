@@ -1,14 +1,11 @@
-import { useRef, useContext, useState, useActionState, startTransition, memo, use, useMemo } from "react";
+import { useRef, useContext, useState, useActionState, startTransition, memo, useMemo } from "react";
 import { answerResultType, quizType } from "../ts/typeQuiz";
 import { QuestionCounterContext } from "../providers/QuestionCounterContext";
 import { SelectQuizContext } from "../providers/SelectQuizContext";
 import { ViewAnswers } from "./ViewAnswers";
 import { QuizBtn } from "./QuizBtn";
 
-export const QuizBtnViewAnswerWrapper = memo(({ fetchdataPromise }: { fetchdataPromise: Promise<quizType[]> }) => {
-    // use()でPromiseの中身を取得（Promiseが未完了ならこのコンポーネントはサスペンドする）
-    const getData: quizType[] = use(fetchdataPromise);
-
+export const QuizBtnViewAnswerWrapper = memo(({ getData }: { getData: quizType[] }) => {
     /* 選択したクイズデータに回答強制（'adjust'プロパティ・キー）があるかどうかチェック（＝必ず100点になる機能の有無を確認）*/
     const hasAdjustProp_absolute_100_flag: boolean | undefined = useMemo(() => {
         if (typeof getData === 'undefined') {
