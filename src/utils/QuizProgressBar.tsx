@@ -1,11 +1,8 @@
-import { memo, use, useContext } from "react";
+import { memo, useContext } from "react";
 import { quizType } from "../ts/typeQuiz";
 import { QuestionCounterContext } from "../providers/QuestionCounterContext";
 
-export const QuizProgressBar = memo(({ fetchdataPromise }: { fetchdataPromise: Promise<quizType[]> }) => {
-    // use()でPromiseの中身を取得（Promiseが未完了ならこのコンポーネントはサスペンドする）
-    const getData: quizType[] = use(fetchdataPromise);
-
+export const QuizProgressBar = memo(({ getData }: { getData: quizType[] }) => {
     const { questionCounter } = useContext(QuestionCounterContext);
 
     return (
