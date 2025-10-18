@@ -39,7 +39,7 @@ export const useFetchData = () => {
             }
         }
 
-        console.log(fetchData); // 確認用のログ出力：※処理には関係ない
+        console.warn(fetchData); // 確認用のログ出力：※処理には関係ない
     }
 
     return { fetchDataAction }
