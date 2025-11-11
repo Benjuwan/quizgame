@@ -16,7 +16,7 @@ const TheCommonContent = ({ answer, isSingleComments }: {
         <>
             <h2 className="text-center text-[clamp(24px,calc(100vw/24),32px)] font-normal mb-4 md:text-[18px]">{answer.title}</h2>
             {answer.img &&
-                <div className="h-[clamp(460px,calc(100vw/2),640px)] mb-8 md:h-[clamp(160px,calc(100vw/5),280px)] md:mb-[20px]">
+                <div className="h-[clamp(460px,calc(100vw/2),640px)] mb-8 md:h-[clamp(160px,calc(100vw/5),280px)] md:mb-5">
                     <img className="object-contain w-full h-full" src={answer.img} alt={`「${answer.title}」の参照画像`} />
                 </div>
             }
@@ -51,7 +51,10 @@ export const ViewAnswers = memo(({ props }: { props: viewAnswersType }) => {
         return withCommentData.length === 1;
     }, [fetchAnswersData]);
 
-    const resetBtn: () => void = () => location.reload();
+    const resetBtn: () => void = () => {
+        window.scrollTo(0, 0);
+        location.reload();
+    };
 
     return (
         <div className="results-container">
@@ -75,7 +78,7 @@ export const ViewAnswers = memo(({ props }: { props: viewAnswersType }) => {
                             </summary>
 
                             {typeof correctAnswerCount !== 'undefined' &&
-                                <p className="leading-[2] text-base text-[#333] my-[.5em]">正解数：<span className="text-[#1a9b5f]">{correctAnswerCount}</span> / {getData.length}</p>
+                                <p className="leading-loose text-base text-[#333] my-[.5em]">正解数：<span className="text-[#1a9b5f]">{correctAnswerCount}</span> / {getData.length}</p>
                             }
 
                             <ul className="text-[1rem] p-4 shadow-inner shadow-black/45 rounded list-none">
@@ -132,7 +135,7 @@ export const ViewAnswers = memo(({ props }: { props: viewAnswersType }) => {
                         id="resetBtn"
                         type="button"
                         onClick={resetBtn}
-                        className="appearance-none border-none outline-none cursor-pointer block w-[clamp(80px,calc(100vw/2),320px)] mx-auto mb-10 leading-11 bg-[#333] border border-transparent text-white tracking-wider hover:transition-all hover:duration-[.5s] hover:border-[#333] hover:text-[#333] hover:bg-white"
+                        className="appearance-none border-none outline-none cursor-pointer block w-[clamp(80px,calc(100vw/2),320px)] mx-auto mb-10 leading-11 bg-[#333] border border-transparent text-white tracking-wider hover:transition-all hover:duration-500 hover:border-[#333] hover:text-[#333] hover:bg-white"
                     >
                         最初からやり直す
                     </button>
