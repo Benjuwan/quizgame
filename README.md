@@ -9,7 +9,7 @@
 
 <img width="757" alt="Image" src="https://github.com/user-attachments/assets/a87b514c-8e55-493b-b717-64c28ef75e18" />
 
-- 試用キャプチャ<br>
+- 試用キャプチャ  
 このように**間違った回答を選ぶと強制的に選択不可となり、回答が未チェックでは次の問題へは進めない**ため、必然的に**正答しか選べない**状況になるのです。
 
 ![Image](https://github.com/user-attachments/assets/68dac002-6503-40ae-85fe-3d3ea8227a65)
@@ -19,13 +19,16 @@
 もちろん、一般的なクイズの仕様（回答強制が無いver）にすることもできます。下記[質問内容シート](#質問内容シート)で記載している`adjust`（※ヒントを提示して選択不可にする）を用意しなければ通常の処理（回答強制が無いver）として機能します。
 
 - 用途
-  - 脳トレ（認知症の予防とか）<br>間違った回答を選択した時点でヒントが表示されるので**振り返り + 脳への刺激になる**（かも？）
-  - 学習の振り返り<br>**語句や専門用語、構文などのチェックといった学習面**のほか、**定型的な業務フローの確認（新人教育）など業務面**といった振り返りに活用できる（かも？）
-  - 子どもの知育<br>表示された画像を含めて**楽しく学べる**（かも？）
+  - 脳トレ（認知症の予防とか）  
+  間違った回答を選択した時点でヒントが表示されるので**振り返り + 脳への刺激になる**（かも？）
+  - 学習の振り返り  
+  **語句や専門用語、構文などのチェックといった学習面**のほか、**定型的な業務フローの確認（新人教育）など業務面**といった振り返りに活用できる（かも？）
+  - 子どもの知育  
+  表示された画像を含めて**楽しく学べる**（かも？）
   - `adjust`（※回答強制機能）を用意しないことで一般的なクイズとして活用
 
 ## クイズゲームの選択肢シート
-- `public/jsons/select-quiz.json`<br>
+- `public/jsons/select-quiz.json`  
 各種`value`は「質問内容シート（`public\jsons\quiz`）」と「質問回答シート（`public\jsons\answers`）」配下の各ディレクトリ（フォルダ）名と一致させること
 
 ## 質問内容シート
@@ -38,11 +41,11 @@
     - `adjust`：回答強制キーワード（※任意かつ複数キーワードの設定も可能。各設問において一つも設定していない場合は一般的なクイズの仕様に変化する）
 
 ## 質問回答シート
-- `public\jsons\answers`の各種`json`ファイル<br>
+- `public\jsons\answers`の各種`json`ファイル  
 得点（`point`の総合算）に応じた結果表示データ。デフォルトでは`low`,`medium`,`high`の3種類を用意。
 
 ## 環境変数
-- [環境変数 | 環境変数とモード](https://ja.vite.dev/guide/env-and-mode.html#env-variables)<br>
+- [環境変数 | 環境変数とモード](https://ja.vite.dev/guide/env-and-mode.html#env-variables)  
 `vite`プロジェクトなので環境変数に`VITE_`を前置しています。
 ```bash
 VITE_FETCH_URL = "http://localhost:5173/public"
@@ -113,13 +116,13 @@ try {
 - @eslint/js@9.39.2
 - @tailwindcss/vite@4.1.18
 - @types/react-dom@19.2.3
-- @types/react@19.2.9
+- @types/react@19.2.10
 - @vitejs/plugin-react@5.1.2
 - eslint-plugin-react-hooks@7.0.1
 - eslint-plugin-react-refresh@0.4.26
 - eslint-plugin-react@7.37.5
 - eslint@9.39.2
-- globals@17.1.0
+- globals@17.2.0
 - react-dom@19.2.4
 - react@19.2.4
 - tailwindcss@4.1.18
