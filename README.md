@@ -123,9 +123,9 @@ try {
 - eslint-plugin-react@7.37.5
 - eslint@9.39.4
 - globals@17.4.0
-- react-dom@19.2.4
-- react@19.2.4
+- react-dom@19.2.5
+- react@19.2.5
 - tailwindcss@4.2.2
-- typescript-eslint@8.57.1
+- typescript-eslint@8.58.1
 - typescript@5.9.3
-- vite@7.3.1
+- vite@7.3.2
