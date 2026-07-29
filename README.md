@@ -113,19 +113,19 @@ try {
 </details>
 
 ## 技術構成
-- @eslint/js@9.39.4
-- @tailwindcss/vite@4.3.1
+- @eslint/js@9.39.5
+- @tailwindcss/vite@4.3.3
 - @types/react-dom@19.2.3
 - @types/react@19.2.17
 - @vitejs/plugin-react@5.2.0
 - eslint-plugin-react-hooks@7.1.1
 - eslint-plugin-react-refresh@0.5.3
 - eslint-plugin-react@7.37.5
-- eslint@9.39.4
-- globals@17.6.0
-- react-dom@19.2.7
-- react@19.2.7
-- tailwindcss@4.3.1
-- typescript-eslint@8.61.1
+- eslint@9.39.5
+- globals@17.8.0
+- react-dom@19.2.8
+- react@19.2.8
+- tailwindcss@4.3.3
+- typescript-eslint@8.65.0
 - typescript@6.0.3
-- vite@8.0.16
+- vite@8.1.5
